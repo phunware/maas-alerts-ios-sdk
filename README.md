@@ -35,8 +35,13 @@ Scroll down for implementation details.
 Documentation
 ------------
 
-MaaSAlerts documentation is included in the Documents folder in the repository as both HTML and .docset. You can also find the latest documentation here: http://phunware.github.io/maas-alerts-ios-sdk/
+MaaSAlerts documentation is included in the Documents folder in the repository as both HTML and .docset. You can also find the latest documentation here: http://phunware.github.io/maas-alerts-ios-sdk/.
 
+Configuring up your app for Apple Push Notifications can be a challenging task. Here are some resources to kickstart the process:
+- Apple Documentation: https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Introduction.html
+- Apple Push Notification Services Tutorial (1/2): http://www.raywenderlich.com/32960/apple-push-notification-services-in-ios-6-tutorial-part-1
+- Apple Push Notification Services Tutorial (1/2): http://www.raywenderlich.com/32963/apple-push-notification-services-in-ios-6-tutorial-part-2
+- 
 
 
 Application Setup
