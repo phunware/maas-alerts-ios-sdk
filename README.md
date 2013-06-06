@@ -91,6 +91,7 @@ Apple has three primary methods for handling remote notifications. You will need
 For a complete example, see https://github.com/phunware/maas-alerts-ios-sdk/Sample
 
 
+
 Subscription Groups
 -------------------
 MaaS Portal provides the ability to setup subscribtion groups for which more filtered alerts and notifications can be received. There are two MaaSAlerts SDK methods the facilitate this, *getSubscriptionGroupsWithSuccess:failure:* and *subscribeToGroupsWithIDs:success:failure:*.
