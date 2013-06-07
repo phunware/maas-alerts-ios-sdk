@@ -84,7 +84,7 @@
 			<Parameters>
 				<Parameter>
 					<Name>success</Name>
-					<Abstract type="html">A block object to be executed when getSubscriptionGroupsWithSuccess:success:failure: succeeds. This block has no return value and takes one argument: The groups received from the server, an NSArray object that contains the subscription groups in the following format {@&quot;id&quot; : @&quot;12&quot;, @&quot;description&quot; : @&quot;Subscription group description&quot;}.</Abstract>
+					<Abstract type="html">A block object to be executed when getSubscriptionGroupsWithSuccess:success:failure: succeeds. This block has no return value and takes one argument: The groups received from the server, an NSArray object that contains the subscription groups in the following format {@&quot;id&quot; : @&quot;12&quot;, @&quot;name&quot; : @&quot;Subscription group name&quot;}.</Abstract>
 				</Parameter><Parameter>
 					<Name>failure</Name>
 					<Abstract type="html">A block object to be executed when getSubscriptionGroupsWithSuccess:success:failure: fails. This block has no return value and takes one argument:, an NSError object describing the error that occurred.</Abstract>
