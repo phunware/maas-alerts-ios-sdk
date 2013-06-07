@@ -60,7 +60,7 @@
 /**
  Get subscription groups list. Returns an NSArray of available subscription groups or an NSError object.
  
- @param success A block object to be executed when `getSubscriptionGroupsWithSuccess:success:failure:` succeeds. This block has no return value and takes one argument: The groups received from the server, an `NSArray` object that contains the subscription groups in the following format `{@"id" : @"12", @"description" : @"Subscription group description"}`.
+ @param success A block object to be executed when `getSubscriptionGroupsWithSuccess:success:failure:` succeeds. This block has no return value and takes one argument: The groups received from the server, an `NSArray` object that contains the subscription groups in the following format `{@"id" : @"12", @"name" : @"Subscription group name"}`.
  @param failure A block object to be executed when `getSubscriptionGroupsWithSuccess:success:failure:` fails. This block has no return value and takes one argument:, an NSError object describing the error that occurred.
  */
 + (void)getSubscriptionGroupsWithSuccess:(void (^)(NSArray *groups))success failure:(void (^)(NSError *error))failure;

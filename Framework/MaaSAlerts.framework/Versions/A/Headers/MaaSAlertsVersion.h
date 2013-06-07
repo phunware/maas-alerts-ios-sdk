@@ -8,7 +8,7 @@
 #ifndef MaaSAlerts_MaaSAlertsVersion_h
 #define MaaSAlerts_MaaSAlertsVersion_h
 
-#define       MaaSAlerts_VERSION  @"1.0.0"
+#define        MaaSAlerts_VERSION  @"1.0.1"
 
 //
 // CHANGELOG
