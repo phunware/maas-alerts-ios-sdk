@@ -61,7 +61,7 @@ Inside your application delegate you will need to initialize MaaSCore in the app
     [MaaSCore setApplicationID:@"APPLICATION_ID"
     			   setAccessKey:@"ACCESS_KEY"
                   signatureKey:@"SIGNATURE_KEY"
-                 encryptionKey:@"ENCRYPT_KEY"]; // Currently unused. You can place any NSString value here
+                 encryptionKey:@"ENCRYPT_KEY"]; // Currently unused. You can place anything NSString value here
     ...
 }
 ````
@@ -89,7 +89,6 @@ Apple has three primary methods for handling remote notifications. You will need
 ````
 
 For a complete example, see https://github.com/phunware/maas-alerts-ios-sdk/Sample
-
 
 
 Subscription Groups
