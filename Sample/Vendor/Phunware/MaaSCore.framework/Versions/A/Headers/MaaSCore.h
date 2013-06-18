@@ -52,6 +52,11 @@ typedef enum {
 + (void)setLoggingLevel:(MaaSLogLevel)loggingLevel forService:(NSString *)serviceName;
 
 /**
+ Disables MaaSCore location services. Location services are used for comprehensive analytics. If you include `CoreLocation.framework` in your project MaaSCore will automatically request access to the users current location.
+ */
++ (void)disableLocationServices;
+
+/**
  Returns the MaaS application ID.
  */
 + (NSString *)applicationID;
