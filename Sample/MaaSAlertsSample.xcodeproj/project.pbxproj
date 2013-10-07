@@ -22,6 +22,7 @@
 		A3BB300316AE248F00702C94 /* MaaSAlertsSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BB300216AE248F00702C94 /* MaaSAlertsSampleTests.m */; };
 		A3BB302C16AE299D00702C94 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BB302A16AE299D00702C94 /* CoreTelephony.framework */; };
 		B035554F171DE7F60068A2EF /* MaaSAlertsSample3.app in Resources */ = {isa = PBXBuildFile; fileRef = A3BB2FD316AE248F00702C94 /* MaaSAlertsSample3.app */; };
+		B06F420D1803653E002B1B93 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06F420C1803653E002B1B93 /* AdSupport.framework */; };
 		B071785C171CA792004AF51E /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B071785B171CA792004AF51E /* ConsoleViewController.m */; };
 		B071785F171CAE4C004AF51E /* PWLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = B071785E171CAE4B004AF51E /* PWLogger.m */; };
 		B088137B1741916600A67D33 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088137A1741916600A67D33 /* Security.framework */; };
@@ -76,6 +77,7 @@
 		A3BB300216AE248F00702C94 /* MaaSAlertsSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaaSAlertsSampleTests.m; sourceTree = "<group>"; };
 		A3BB302916AE299D00702C94 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A3BB302A16AE299D00702C94 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		B06F420C1803653E002B1B93 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		B071785A171CA792004AF51E /* ConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleViewController.h; sourceTree = "<group>"; };
 		B071785B171CA792004AF51E /* ConsoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsoleViewController.m; sourceTree = "<group>"; };
 		B071785D171CAE4B004AF51E /* PWLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWLogger.h; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B06F420D1803653E002B1B93 /* AdSupport.framework in Frameworks */,
 				B088137D1741919D00A67D33 /* MobileCoreServices.framework in Frameworks */,
 				B088137B1741916600A67D33 /* Security.framework in Frameworks */,
 				B0E68531172041ED006EC964 /* MessageUI.framework in Frameworks */,
@@ -133,6 +136,7 @@
 		A3BB2FC816AE248F00702C94 = {
 			isa = PBXGroup;
 			children = (
+				B06F420C1803653E002B1B93 /* AdSupport.framework */,
 				A3BB2FDD16AE248F00702C94 /* Classes */,
 				B0C1BE4E175CDF5B000BBB09 /* Assets */,
 				B0C1BE48175CDEDC000BBB09 /* Vendor */,
