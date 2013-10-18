@@ -8,13 +8,6 @@
 #ifndef MaaSCore_MaaSCoreVersion_h
 #define MaaSCore_MaaSCoreVersion_h
 
-#define              MaaSCore_VERSION  @"1.0.1"
-
-//
-// CHANGELOG
-//
-// 1.0.0 :
-// - Initial release
-//
+#define              MaaSCore_VERSION  @"1.2.0"
 
 #endif
