@@ -1,7 +1,7 @@
 MaaSAlerts iOS SDK
 ==================
 
-Version 1.0.0
+Version 1.1.0
 
 This is the iOS SDK for the MaaS Phunwares Alerts & Notifications module. Visit http://maas.phunware.com/ for more details and to sign up.
 
@@ -10,7 +10,7 @@ This is the iOS SDK for the MaaS Phunwares Alerts & Notifications module. Visit 
 Requirements
 ------------
 
-- MaaSCore v1.0.0 or greater.
+- MaaSCore v1.2.0 or greater.
 - iOS 5.0 or greater
 - Xcode 4.4 or greater
 

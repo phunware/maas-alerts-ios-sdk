@@ -22,7 +22,7 @@
 		A3BB300316AE248F00702C94 /* MaaSAlertsSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BB300216AE248F00702C94 /* MaaSAlertsSampleTests.m */; };
 		A3BB302C16AE299D00702C94 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BB302A16AE299D00702C94 /* CoreTelephony.framework */; };
 		B035554F171DE7F60068A2EF /* MaaSAlertsSample3.app in Resources */ = {isa = PBXBuildFile; fileRef = A3BB2FD316AE248F00702C94 /* MaaSAlertsSample3.app */; };
-		B06F420D1803653E002B1B93 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06F420C1803653E002B1B93 /* AdSupport.framework */; };
+		B06F420D1803653E002B1B93 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06F420C1803653E002B1B93 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B071785C171CA792004AF51E /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B071785B171CA792004AF51E /* ConsoleViewController.m */; };
 		B071785F171CAE4C004AF51E /* PWLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = B071785E171CAE4B004AF51E /* PWLogger.m */; };
 		B088137B1741916600A67D33 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088137A1741916600A67D33 /* Security.framework */; };

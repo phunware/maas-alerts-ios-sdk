@@ -8,14 +8,6 @@
 #ifndef MaaSAlerts_MaaSAlertsVersion_h
 #define MaaSAlerts_MaaSAlertsVersion_h
 
-#define        MaaSAlerts_VERSION  @"1.0.1"
-
-//
-// CHANGELOG
-//
-// 1.0.0 :
-// - Initial release
-//
-
+#define        MaaSAlerts_VERSION  @"1.1.0"
 
 #endif
