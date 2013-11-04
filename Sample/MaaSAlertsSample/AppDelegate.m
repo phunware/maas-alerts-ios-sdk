@@ -33,10 +33,11 @@
     // Clear the notification center and all local notification
     [self clearNotificationCenter];
     
+#warning Be sure to replace these values with provided my the MaaS Portal
     // Initialize MaaSCore with your credentials
-    [MaaSCore setApplicationID:@"14"
-                     accessKey:@"6b361d18846e5f5ccc1ae619ff713473733856a8"
-                  signatureKey:@"1d470cd175c93aadc7fa891962532e3f7c3c3106"
+    [MaaSCore setApplicationID:@"YOUR_APPLICATION_ID"
+                     accessKey:@"YOUR_ACCESS_KEY"
+                  signatureKey:@"YOUR_SIGNATURE_KEY"
                  encryptionKey:@"nada"];
     
     // Set the log level to debug so we can see what's going on
