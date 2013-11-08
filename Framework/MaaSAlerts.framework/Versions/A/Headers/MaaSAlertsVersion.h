@@ -8,6 +8,6 @@
 #ifndef MaaSAlerts_MaaSAlertsVersion_h
 #define MaaSAlerts_MaaSAlertsVersion_h
 
-#define        MaaSAlerts_VERSION  @"1.1.0"
+#define        MaaSAlerts_VERSION  @"1.1.1"
 
 #endif
