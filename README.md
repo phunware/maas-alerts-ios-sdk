@@ -43,6 +43,7 @@ Here are some resources to help you configure your app for Apple Push Notificati
 - [Apple Push Notification Services Tutorial (2/2)](http://www.raywenderlich.com/32963/apple-push-notification-services-in-ios-6-tutorial-part-2)
 
 
+
 Application Setup
 -----------------
 At the top of your application delegate (.m) file, add the following:
@@ -91,8 +92,10 @@ Apple has three primary methods for handling remote notifications. You will need
 For a complete example, see https://github.com/phunware/maas-alerts-ios-sdk/Sample
 
 
+
 Subscription Groups
 -------------------
+
 MaaS Portal provides the ability to setup subscribtion groups for filtered alerts and notifications. There are two MaaSAlerts SDK methods that facilitate this: *getSubscriptionGroupsWithSuccess:failure:* and *subscribeToGroupsWithIDs:success:failure:*
 
 ````objective-c
@@ -114,6 +117,8 @@ edGroups    } failure:^(NSError *error) {
     }];
 }
 ````
+
+
 
 Optional
 --------
