@@ -3,7 +3,7 @@ MaaSAlerts iOS SDK
 
 Version 1.1.1
 
-This is the iOS SDK for Phunware's Alerts & Notifications MaaS module. Visit http://maas.phunware.com/ for more details and to sign up.
+This is Phunware's iOS SDK for the Alerts & Notifications MaaS module. Visit http://maas.phunware.com/ for more details and to sign up.
 
 
 
