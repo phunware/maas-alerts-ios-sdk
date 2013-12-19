@@ -1,4 +1,4 @@
-MaaSAlerts iOS SDK
+MaaS Alerts SDK for iOS
 ==================
 
 Version 1.1.1
