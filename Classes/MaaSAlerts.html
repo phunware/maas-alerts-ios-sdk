@@ -4,10 +4,9 @@
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
 		<title>MaaSAlerts Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
-		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.1 (build 840)" />
+		<meta name="generator" content="appledoc 2.2 (build 961)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -51,6 +50,8 @@
 	<option value="//api/name/didReceiveRemoteNotificationForPushID:">&nbsp;&nbsp;&nbsp;&nbsp;+ didReceiveRemoteNotificationForPushID:</option>
 	
 	<option value="//api/name/didRegisterForRemoteNotificationsWithDeviceToken:">&nbsp;&nbsp;&nbsp;&nbsp;+ didRegisterForRemoteNotificationsWithDeviceToken:</option>
+	
+	<option value="//api/name/getExtraInformationForAlert:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ getExtraInformationForAlert:success:failure:</option>
 	
 	<option value="//api/name/getExtraInformationForPushID:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ getExtraInformationForPushID:success:failure:</option>
 	
@@ -108,6 +109,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didRegisterForRemoteNotificationsWithDeviceToken:">didRegisterForRemoteNotificationsWithDeviceToken:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getExtraInformationForAlert:success:failure:">getExtraInformationForAlert:success:failure:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getExtraInformationForPushID:success:failure:">getExtraInformationForPushID:success:failure:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSubscriptionGroupsWithSuccess:failure:">getSubscriptionGroupsWithSuccess:failure:</a></span></li>
@@ -153,8 +156,8 @@
 </tr>
 						</tbody></table></div>
 					
-					
-					
+                    
+                    
 					
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
@@ -186,28 +189,24 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/didRegisterForRemoteNotificationsWithDeviceToken:">+&nbsp;didRegisterForRemoteNotificationsWithDeviceToken:</a></code>
-		<span class="tooltip"><p>Call inside <code>application:didRegisterForRemoteNotificationsWithDeviceToken:</code></p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/didFailToRegisterForRemoteNotificationsWithError:">+&nbsp;didFailToRegisterForRemoteNotificationsWithError:</a></code>
-		<span class="tooltip"><p>Call inside <code>application:didFailToRegisterForRemoteNotificationsWithError:</code></p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/didReceiveRemoteNotification:">+&nbsp;didReceiveRemoteNotification:</a></code>
-		<span class="tooltip"><p>Called inside <code>application:didReceiveRemoteNotification:</code>. This method assumes all notifications received were opened by the user and triggers a push analytics payload.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/didReceiveRemoteNotificationForPushID:">+&nbsp;didReceiveRemoteNotificationForPushID:</a></code>
-		<span class="tooltip"><p>Called when you want to explicitly trigger a push analytics event. This method should only be called when the user consumes a push notification.</p></span>
 	</span>
 	
 	
@@ -222,14 +221,12 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/getSubscriptionGroupsWithSuccess:failure:">+&nbsp;getSubscriptionGroupsWithSuccess:failure:</a></code>
-		<span class="tooltip"><p>Get subscription groups list. Returns an NSArray of available subscription groups or an NSError object.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/subscribeToGroupsWithIDs:success:failure:">+&nbsp;subscribeToGroupsWithIDs:success:failure:</a></code>
-		<span class="tooltip"><p>Subscribe to a list of groups.</p></span>
 	</span>
 	
 	
@@ -244,35 +241,36 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/setDevelopmentModeEnabled:">+&nbsp;setDevelopmentModeEnabled:</a></code>
-		<span class="tooltip"><p>Optionally called inside <code>application:didFinishLaunchingWithOptions:</code>. By default your application will use Apple&rsquo;s production push notification servers. If you would like to use the sandbox push notificiation servers you would call <code>[MaaSAlerts setDevelopmentModeEnabled:YES]</code>. Note that even if development mode is enabled, push notifications will not work in simulator.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/getExtraInformationForPushID:success:failure:">+&nbsp;getExtraInformationForPushID:success:failure:</a></code>
-		<span class="tooltip"><p>Get extra push information associated for the specified push ID.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getExtraInformationForAlert:success:failure:">+&nbsp;getExtraInformationForAlert:success:failure:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/serviceName">+&nbsp;serviceName</a></code>
-		<span class="tooltip"><p>Returns &lsquo;MaaSAlerts&rsquo;.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/isOptIn">+&nbsp;isOptIn</a></code>
-		<span class="tooltip"><p>Check push opt-in status</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/APNSToken">+&nbsp;APNSToken</a></code>
-		<span class="tooltip"><p>Returns Apple push token. Call after <a href="#//api/name/didRegisterForRemoteNotificationsWithDeviceToken:"><code>didRegisterForRemoteNotificationsWithDeviceToken:</code></a>. Calling before will return nil.</p></span>
 	</span>
 	
 	
@@ -512,13 +510,69 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/getExtraInformationForAlert:success:failure:" title="getExtraInformationForAlert:success:failure:"></a>
+	<h3 class="subsubtitle method-title">getExtraInformationForAlert:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get extra push information associated for the specified alert.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)getExtraInformationForAlert:(PWAlert *)<em>alert</em> success:(void ( ^ ) ( NSDictionary *extraInformation ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>alert</em></dt>
+			<dd><p>The alert for which extra information is requested.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>A block object to be executed when <code>getExtraInformationForAlert:success:failure:</code> succeeds. This block has no return value and takes one argument: the extra information received from the server. The return object will always be an <code>NSDictionary</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>A block object to be executed when <code>getExtraInformationForAlert:success:failure:</code> fails. This block has no return value and takes one argument:, an <code>NSError</code> object describing the error that occurred.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MaaSAlerts.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/getExtraInformationForPushID:success:failure:" title="getExtraInformationForPushID:success:failure:"></a>
 	<h3 class="subsubtitle method-title">getExtraInformationForPushID:success:failure:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Get extra push information associated for the specified push ID.</p>
+		<p>Get extra push information associated for the specified push ID. This method is deprecated and will be removed in the future. Please use <a href="#//api/name/getExtraInformationForAlert:success:failure:"><code>getExtraInformationForAlert:success:failure:</code></a>.</p>
 	</div>		
 	
     
@@ -797,6 +851,8 @@
 					
 					
 					
+                    
+                    
 				</div>
 				<div class="main-navigation navigation-bottom">
 					<ul>
@@ -807,9 +863,9 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Phunware, Inc.. All rights reserved. (Last updated: 2013-06-07)</span><br />
+						<p><span class="copyright">&copy; 2013 Phunware, Inc.. All rights reserved. (Last updated: 2013-12-23)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						
 					</div>
 				</div>
