@@ -100,6 +100,15 @@
     NSString *message = [[[userInfo objectForKey:@"aps"] objectForKey:@"alert"] objectForKey:@"body"];
     UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"MaaSAlerts" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [a show];
+    
+    // Try and fetch extra information for the alert
+    PWAlert *alert = [[PWAlert alloc] initWithNotificationUserInfo:userInfo];
+    
+    [MaaSAlerts getExtraInformationForAlert:alert success:^(NSDictionary *extraInformation) {
+        NSLog(@"%s %@", __PRETTY_FUNCTION__, extraInformation);
+    } failure:^(NSError *error) {
+        NSLog(@"%s %@", __PRETTY_FUNCTION__, error);
+    }];
 }
 
 
