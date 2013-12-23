@@ -1,5 +1,11 @@
 #MaaSAlerts Changelog
 
+##1.2.0 (Monday, December 23rd, 2013)
+ * Added support for custom alerts (direct, location based, etc)
+ * Added new object to encapsulate a notification, PWAlert
+ * Added new method: `getExtraInformationForAlert:success:failure`
+ * Deprecated `getExtraInformationForPushID:success:failure`
+
 ##1.1.1 (Friday, November 8th, 2013)
  * Re-enabled alerts registration with MaaS on application launch
 

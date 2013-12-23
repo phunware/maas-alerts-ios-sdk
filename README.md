@@ -123,10 +123,20 @@ edGroups    } failure:^(NSError *error) {
 Optional
 --------
 
-Fetching extra information associated with a push notification using MaaSAlerts can be done by using: *getExtraInformationForPushID:success:failure:* 
+Fetching extra information associated with a push notification using MaaSAlerts can be done by using: *getExtraInformationForAlert:success:failure:* 
 
 ````objective-c
-[MaaSAlerts getExtraInformationForPushID:@"PUSH_ID" success:^(NSDictionary *extraInformation) {
+// When receiving a notification you can save save the data in a PWAlert object
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    [MaaSAlerts didReceiveRemoteNotification:userInfo];
+    
+    PWAlert *alert = [PWAlert alloc] initWithNotificationUserInfo:userInfo];
+    ...
+}
+
+// Pass the PWAlert object to retrieve extra information
+[MaaSAlerts getExtraInformationForAlert:alert success:^(NSDictionary *extraInformation) {
         // Process the extra information.
     } failure:^(NSError *error) {
         // Handle error.

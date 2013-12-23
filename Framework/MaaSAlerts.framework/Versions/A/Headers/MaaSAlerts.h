@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MaaSAlerts/PWAlert.h>
 
 /**
   `MaaSAlerts` enables easy implementation of alerts and notifications. It encapsulates advanced push features such as subscriber groups and fetching extra information related to a push notification.
@@ -18,6 +19,8 @@
  
  During the development of your application you may want to utilize Apple's push notification sandbox. To enable development mode for MaaSAlerts you would call `[MaaSAlerts setDevelopmentModeEnabled:YES]`. If you omit this call MaaSAlerts will default to Apple's production push notification system.
  */
+
+extern NSString *const kPWAlertsDeepLinkURL;
 
 @interface MaaSAlerts : NSObject
 
@@ -86,13 +89,22 @@
 + (void)setDevelopmentModeEnabled:(BOOL)enabled;
 
 /**
- Get extra push information associated for the specified push ID.
+ Get extra push information associated for the specified push ID. This method is deprecated and will be removed in the future. Please use `getExtraInformationForAlert:success:failure:`.
  
  @param pushID The ID of the push notification for which extra information is requested.
  @param success A block object to be executed when `getExtraInformationForPushID:success:failure:` succeeds. This block has no return value and takes one argument: the extra information received from the server. The return object will always be an `NSDictionary`.
  @param failure A block object to be executed when `getExtraInformationForPushID:success:failure:` fails. This block has no return value and takes one argument:, an `NSError` object describing the error that occurred.
  */
-+ (void)getExtraInformationForPushID:(NSString *)pushID success:(void(^)(NSDictionary *extraInformation))success failure:(void (^)(NSError *error))failure;
++ (void)getExtraInformationForPushID:(NSString *)pushID success:(void(^)(NSDictionary *extraInformation))success failure:(void (^)(NSError *error))failure __attribute__((deprecated));
+
+/**
+ Get extra push information associated for the specified alert.
+ 
+ @param alert The alert for which extra information is requested.
+ @param success A block object to be executed when `getExtraInformationForAlert:success:failure:` succeeds. This block has no return value and takes one argument: the extra information received from the server. The return object will always be an `NSDictionary`.
+ @param failure A block object to be executed when `getExtraInformationForAlert:success:failure:` fails. This block has no return value and takes one argument:, an `NSError` object describing the error that occurred.
+ */
++ (void)getExtraInformationForAlert:(PWAlert *)alert success:(void(^)(NSDictionary *extraInformation))success failure:(void (^)(NSError *error))failure;
 
 /**
  Returns 'MaaSAlerts'.
