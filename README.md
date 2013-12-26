@@ -19,7 +19,7 @@ Requirements
 Installation
 ------------
 
-MaaSAlerts has a dependency on MaaSCore.framework which is available here: https://github.com/phunware/maas-core-ios-sdk
+MaaS Alerts has a dependency on MaaSCore.framework, which is available here: https://github.com/phunware/maas-core-ios-sdk
 
 It's recommended that you add the MaaS frameworks to the 'Vendor/Phunware' directory. Then add the MaaSCore.framework and MaaSAlerts.framework to your Xcode project.
 
@@ -35,7 +35,7 @@ Scroll down for implementation details.
 Documentation
 ------------
 
-MaaSAlerts documentation is included in the Documents folder in the repository as both HTML and as a .docset. You can also find the latest documentation here: http://phunware.github.io/maas-alerts-ios-sdk/
+MaaS Alerts documentation is included in the Documents folder in the repository as both HTML and as a .docset. You can also find the latest documentation here: http://phunware.github.io/maas-alerts-ios-sdk/
 
 Here are some resources to help you configure your app for Apple Push Notifications:
 - [Apple Documentation](https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Introduction.html)
@@ -58,7 +58,7 @@ Inside your application delegate, you will need to initialize MaaSCore in the ap
 ````objective-c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // These values can be found for your application in MaaS Portal.
+    // These values can be found for your application in the MaaS portal.
     [MaaSCore setApplicationID:@"APPLICATION_ID"
     			   setAccessKey:@"ACCESS_KEY"
                   signatureKey:@"SIGNATURE_KEY"
@@ -67,7 +67,7 @@ Inside your application delegate, you will need to initialize MaaSCore in the ap
 }
 ````
 
-Apple has three primary methods for handling remote notifications. You will need to implement these in your application delegate, forwarding the results to MaaSAlerts:
+Apple has three primary methods for handling remote notifications. You will need to implement these in your application delegate, forwarding the results to MaaS Alerts:
 
 ````objective-c
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken
@@ -96,7 +96,7 @@ For a complete example, see https://github.com/phunware/maas-alerts-ios-sdk/Samp
 Subscription Groups
 -------------------
 
-MaaS Portal provides the ability to setup subscribtion groups for filtered alerts and notifications. There are two MaaSAlerts SDK methods that facilitate this: *getSubscriptionGroupsWithSuccess:failure:* and *subscribeToGroupsWithIDs:success:failure:*
+The MaaS portal provides the ability to setup subscribtion groups for filtered alerts and notifications. There are two MaaS Alerts SDK methods that facilitate this: *getSubscriptionGroupsWithSuccess:failure:* and *subscribeToGroupsWithIDs:success:failure:*
 
 ````objective-c
 // Fetch an array of the available subscriptions.
@@ -123,7 +123,7 @@ edGroups    } failure:^(NSError *error) {
 Optional
 --------
 
-Fetching extra information associated with a push notification using MaaSAlerts can be done by using: *getExtraInformationForAlert:success:failure:* 
+Fetching extra information associated with a push notification using MaaS Alerts can be done by using: *getExtraInformationForAlert:success:failure:* 
 
 ````objective-c
 // When receiving a notification you can save save the data in a PWAlert object
