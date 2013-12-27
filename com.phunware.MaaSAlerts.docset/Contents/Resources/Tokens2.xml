@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/PWAlert</TokenIdentifier>
-			<Abstract type="html">PWAlert object encapsulates</Abstract>
+			<Abstract type="html">PWAlert object encapsulates all information related to an alert. This includes but is not limited to the message, the alert ID, and the payload dictionary.</Abstract>
 			<DeclaredIn>PWAlert.h</DeclaredIn>
             
 			
@@ -50,7 +50,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWAlert/setAlertID:</TokenIdentifier>
-			<Abstract type="html">An NSInteger value that identifies the alert ID.</Abstract>
+			<Abstract type="html">An NSInteger value that identifies the Alert ID.</Abstract>
 			<DeclaredIn>PWAlert.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSString *alertID</Declaration>
@@ -62,7 +62,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWAlert/alertID</TokenIdentifier>
-			<Abstract type="html">An NSInteger value that identifies the alert ID.</Abstract>
+			<Abstract type="html">An NSInteger value that identifies the Alert ID.</Abstract>
 			<DeclaredIn>PWAlert.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSString *alertID</Declaration>
@@ -74,7 +74,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWAlert/alertID</TokenIdentifier>
-			<Abstract type="html">An NSInteger value that identifies the alert ID.</Abstract>
+			<Abstract type="html">An NSInteger value that identifies the Alert ID.</Abstract>
 			<DeclaredIn>PWAlert.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSString *alertID</Declaration>
@@ -86,7 +86,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWAlert/setPayload:</TokenIdentifier>
-			<Abstract type="html">An NSString value that identifies the NSDictionary payload that was used to initialize the PWAlert object. You can use this payload to fetch custom arguments</Abstract>
+			<Abstract type="html">An NSString value that identifies the NSDictionary payload that was used to initialize the PWAlert object. You can use this payload to fetch custom arguments.</Abstract>
 			<DeclaredIn>PWAlert.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSDictionary *payload</Declaration>
@@ -98,7 +98,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/PWAlert/payload</TokenIdentifier>
-			<Abstract type="html">An NSString value that identifies the NSDictionary payload that was used to initialize the PWAlert object. You can use this payload to fetch custom arguments</Abstract>
+			<Abstract type="html">An NSString value that identifies the NSDictionary payload that was used to initialize the PWAlert object. You can use this payload to fetch custom arguments.</Abstract>
 			<DeclaredIn>PWAlert.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSDictionary *payload</Declaration>
@@ -110,7 +110,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/PWAlert/payload</TokenIdentifier>
-			<Abstract type="html">An NSString value that identifies the NSDictionary payload that was used to initialize the PWAlert object. You can use this payload to fetch custom arguments</Abstract>
+			<Abstract type="html">An NSString value that identifies the NSDictionary payload that was used to initialize the PWAlert object. You can use this payload to fetch custom arguments.</Abstract>
 			<DeclaredIn>PWAlert.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSDictionary *payload</Declaration>
@@ -132,7 +132,7 @@
 					<Abstract type="html">The userInfo which encapsulates the notification. This is fetched from the following locations:
 
 - application:didReceiveRemoteNotification: passed a userInfo NSDictionary. You can use this dictionary to instantiate a PWAlert object.
--  application:didFinishLaunchingWithOptions: may have a UIApplicationLaunchOptionsRemoteNotificationKey if the application was launched through a push notification. You can extract the userInfo from the launchOptions NSDictionary using the aformentioned key.</Abstract>
+- application:didFinishLaunchingWithOptions: may have a UIApplicationLaunchOptionsRemoteNotificationKey if the application was launched through a push notification. You can extract the userInfo from the launchOptions NSDictionary using the aformentioned key.</Abstract>
 				</Parameter>
 			</Parameters>
 			

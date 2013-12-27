@@ -166,11 +166,11 @@
 
 <h2>Subscription Groups</h2>
 
-<p>MaaSAlerts provides the ability to provide users a list of subscription groups from which more filtered alerts and notifications can be received. There are two methods the facilitate this, <a href="#//api/name/getSubscriptionGroupsWithSuccess:failure:"><code>getSubscriptionGroupsWithSuccess:failure:</code></a> and <a href="#//api/name/subscribeToGroupsWithIDs:success:failure:"><code>subscribeToGroupsWithIDs:success:failure:</code></a>.</p>
+<p>MaaSAlerts provides the ability to provide users with a list of subscription groups from which more filtered alerts and notifications can be received. There are two methods that facilitate this: <a href="#//api/name/getSubscriptionGroupsWithSuccess:failure:"><code>getSubscriptionGroupsWithSuccess:failure:</code></a> and <a href="#//api/name/subscribeToGroupsWithIDs:success:failure:"><code>subscribeToGroupsWithIDs:success:failure:</code></a>.</p>
 
 <h2>Development</h2>
 
-<p>During the development of your application you may want to utilize Apple&rsquo;s push notification sandbox. To enable development mode for MaaSAlerts you would call <code>[MaaSAlerts setDevelopmentModeEnabled:YES]</code>. If you omit this call MaaSAlerts will default to Apple&rsquo;s production push notification system.</p>
+<p>During the development of your application, you may want to utilize Apple&rsquo;s push notification sandbox. To enable development mode for MaaSAlerts you would call <code>[MaaSAlerts setDevelopmentModeEnabled:YES]</code>. If you omit this call, MaaSAlerts will default to Apple&rsquo;s production push notification system.</p>
 					</div>
 					
 					
@@ -346,7 +346,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>error</em></dt>
-			<dd><p>An NSError object that encapsulates information why registration did not succeed. The application can display this information to the user.</p></dd>
+			<dd><p>An NSError object that encapsulates information that explains why registration did not succeed. The application can display this information to the user.</p></dd>
 		</dl>
 		
 	</div>
@@ -392,7 +392,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>userInfo</em></dt>
-			<dd><p>A dictionary that contains information related to the remote notification, specifically a badge number for the application icon, a notification identifier, and possibly custom data. The provider originates it as a JSON-defined dictionary that AppKit converts to an NSDictionary object; the dictionary may contain only property-list objects plus NSNull.</p></dd>
+			<dd><p>A dictionary that contains information related to the remote notification (specifically, a badge number for the application icon, a notification identifier and possibly custom data). The provider originates it as a JSON-defined dictionary that AppKit converts to an NSDictionary object. The dictionary may contain only property-list objects plus NSNull.</p></dd>
 		</dl>
 		
 	</div>
@@ -438,7 +438,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>pushID</em></dt>
-			<dd><p>The remote notification push ID. The pushID can be found in the <code>application:</code>didReceiveRemoteNotification:<code></code> userInfo, `[userInfo objectForKey:@&ldquo;pid&rdquo;].</p></dd>
+			<dd><p>The remote notification pushID. The pushID can be found in the <code>application:</code>didReceiveRemoteNotification:<code></code> userInfo, `[userInfo objectForKey:@&ldquo;pid&rdquo;].</p></dd>
 		</dl>
 		
 	</div>
@@ -484,7 +484,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>devToken</em></dt>
-			<dd><p>A token that identifies the device to Apple Push Notification Service (APNS). The token is an opaque data type because that is the form that the provider needs to submit to the APNS servers when it sends a notification to a device. The APNS servers require a binary format for performance reasons.</p></dd>
+			<dd><p>A token that identifies the device to Apple Push Notification Service (APNS). The token is an opaque data type because that is the form that the provider needs to submit to the APNS servers when it sends a notification to a device. For performance reasons, the APNS servers require a binary format.</p></dd>
 		</dl>
 		
 	</div>
@@ -540,7 +540,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>failure</em></dt>
-			<dd><p>A block object to be executed when <code>getExtraInformationForAlert:success:failure:</code> fails. This block has no return value and takes one argument:, an <code>NSError</code> object describing the error that occurred.</p></dd>
+			<dd><p>A block object to be executed when <code>getExtraInformationForAlert:success:failure:</code> fails. This block has no return value and takes one argument: an <code>NSError</code> object describing the error that occurred.</p></dd>
 		</dl>
 		
 	</div>
@@ -572,7 +572,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Get extra push information associated for the specified push ID. This method is deprecated and will be removed in the future. Please use <a href="#//api/name/getExtraInformationForAlert:success:failure:"><code>getExtraInformationForAlert:success:failure:</code></a>.</p>
+		<p>Get extra push information associated for the specified pushID. This method is deprecated and will be removed in the future. Please use <a href="#//api/name/getExtraInformationForAlert:success:failure:"><code>getExtraInformationForAlert:success:failure:</code></a>.</p>
 	</div>		
 	
     
@@ -596,7 +596,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>failure</em></dt>
-			<dd><p>A block object to be executed when <code>getExtraInformationForPushID:success:failure:</code> fails. This block has no return value and takes one argument:, an <code>NSError</code> object describing the error that occurred.</p></dd>
+			<dd><p>A block object to be executed when <code>getExtraInformationForPushID:success:failure:</code> fails. This block has no return value and takes one argument: an <code>NSError</code> object describing the error that occurred.</p></dd>
 		</dl>
 		
 	</div>
@@ -642,12 +642,12 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>success</em></dt>
-			<dd><p>A block object to be executed when <code>getSubscriptionGroupsWithSuccess:success:failure:</code> succeeds. This block has no return value and takes one argument: The groups received from the server, an <code>NSArray</code> object that contains the subscription groups in the following format <code>{@"id" : @"12", @"name" : @"Subscription group name"}</code>.</p></dd>
+			<dd><p>A block object to be executed when <code>getSubscriptionGroupsWithSuccess:success:failure:</code> succeeds. This block has no return value and takes one argument: the groups received from the server (an <code>NSArray</code> object that contains the subscription groups in the following format <code>{@"id" : @"12", @"name" : @"Subscription group name"}</code>).</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>failure</em></dt>
-			<dd><p>A block object to be executed when <code>getSubscriptionGroupsWithSuccess:success:failure:</code> fails. This block has no return value and takes one argument:, an NSError object describing the error that occurred.</p></dd>
+			<dd><p>A block object to be executed when <code>getSubscriptionGroupsWithSuccess:success:failure:</code> fails. This block has no return value and takes one argument: an NSError object describing the error that occurred.</p></dd>
 		</dl>
 		
 	</div>
@@ -679,7 +679,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Check push opt-in status</p>
+		<p>Checks push opt-in status.</p>
 	</div>		
 	
     
@@ -751,7 +751,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Optionally called inside <code>application:didFinishLaunchingWithOptions:</code>. By default your application will use Apple&rsquo;s production push notification servers. If you would like to use the sandbox push notificiation servers you would call <code>[MaaSAlerts setDevelopmentModeEnabled:YES]</code>. Note that even if development mode is enabled, push notifications will not work in simulator.</p>
+		<p>Optionally called inside <code>application:didFinishLaunchingWithOptions:</code>. By default, your application will use Apple&rsquo;s production push notification servers. If you would like to use the sandbox push notificiation servers you would call <code>[MaaSAlerts setDevelopmentModeEnabled:YES]</code>. Note that even if development mode is enabled, push notifications will not work in the simulator.</p>
 	</div>		
 	
     
@@ -811,7 +811,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>groupIDs</em></dt>
-			<dd><p>An array of 1 or more <code>NSString</code> objects that represent the group IDs that are being subscribed to.</p></dd>
+			<dd><p>An array of one or more <code>NSString</code> objects that represent the group IDs being subscribed to.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -821,7 +821,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>failure</em></dt>
-			<dd><p>A block object to be executed when <code>subscribeToGroupsWithIDs:success:failure:</code> fails. This block has no return value and takes one argument:, an <code>NSError</code> object describing the error that occurred.</p></dd>
+			<dd><p>A block object to be executed when <code>subscribeToGroupsWithIDs:success:failure:</code> fails. This block has no return value and takes one argument: an <code>NSError</code> object describing the error that occurred.</p></dd>
 		</dl>
 		
 	</div>
@@ -863,7 +863,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Phunware, Inc.. All rights reserved. (Last updated: 2013-12-23)</span><br />
+						<p><span class="copyright">&copy; 2013 Phunware, Inc.. All rights reserved. (Last updated: 2013-12-27)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						

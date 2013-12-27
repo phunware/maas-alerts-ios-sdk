@@ -21,7 +21,7 @@
 			<Parameters>
 				<Parameter>
 					<Name>devToken</Name>
-					<Abstract type="html">A token that identifies the device to Apple Push Notification Service (APNS). The token is an opaque data type because that is the form that the provider needs to submit to the APNS servers when it sends a notification to a device. The APNS servers require a binary format for performance reasons.</Abstract>
+					<Abstract type="html">A token that identifies the device to Apple Push Notification Service (APNS). The token is an opaque data type because that is the form that the provider needs to submit to the APNS servers when it sends a notification to a device. For performance reasons, the APNS servers require a binary format.</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -38,7 +38,7 @@
 			<Parameters>
 				<Parameter>
 					<Name>error</Name>
-					<Abstract type="html">An NSError object that encapsulates information why registration did not succeed. The application can display this information to the user.</Abstract>
+					<Abstract type="html">An NSError object that encapsulates information that explains why registration did not succeed. The application can display this information to the user.</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -55,7 +55,7 @@
 			<Parameters>
 				<Parameter>
 					<Name>userInfo</Name>
-					<Abstract type="html">A dictionary that contains information related to the remote notification, specifically a badge number for the application icon, a notification identifier, and possibly custom data. The provider originates it as a JSON-defined dictionary that AppKit converts to an NSDictionary object; the dictionary may contain only property-list objects plus NSNull.</Abstract>
+					<Abstract type="html">A dictionary that contains information related to the remote notification (specifically, a badge number for the application icon, a notification identifier and possibly custom data). The provider originates it as a JSON-defined dictionary that AppKit converts to an NSDictionary object. The dictionary may contain only property-list objects plus NSNull.</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -72,7 +72,7 @@
 			<Parameters>
 				<Parameter>
 					<Name>pushID</Name>
-					<Abstract type="html">The remote notification push ID. The pushID can be found in the application:didReceiveRemoteNotification: userInfo, `[userInfo objectForKey:@&quot;pid&quot;].</Abstract>
+					<Abstract type="html">The remote notification pushID. The pushID can be found in the application:didReceiveRemoteNotification: userInfo, `[userInfo objectForKey:@&quot;pid&quot;].</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -89,10 +89,10 @@
 			<Parameters>
 				<Parameter>
 					<Name>success</Name>
-					<Abstract type="html">A block object to be executed when getSubscriptionGroupsWithSuccess:success:failure: succeeds. This block has no return value and takes one argument: The groups received from the server, an NSArray object that contains the subscription groups in the following format {@&quot;id&quot; : @&quot;12&quot;, @&quot;name&quot; : @&quot;Subscription group name&quot;}.</Abstract>
+					<Abstract type="html">A block object to be executed when getSubscriptionGroupsWithSuccess:success:failure: succeeds. This block has no return value and takes one argument: the groups received from the server (an NSArray object that contains the subscription groups in the following format {@&quot;id&quot; : @&quot;12&quot;, @&quot;name&quot; : @&quot;Subscription group name&quot;}).</Abstract>
 				</Parameter><Parameter>
 					<Name>failure</Name>
-					<Abstract type="html">A block object to be executed when getSubscriptionGroupsWithSuccess:success:failure: fails. This block has no return value and takes one argument:, an NSError object describing the error that occurred.</Abstract>
+					<Abstract type="html">A block object to be executed when getSubscriptionGroupsWithSuccess:success:failure: fails. This block has no return value and takes one argument: an NSError object describing the error that occurred.</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -109,13 +109,13 @@
 			<Parameters>
 				<Parameter>
 					<Name>groupIDs</Name>
-					<Abstract type="html">An array of 1 or more NSString objects that represent the group IDs that are being subscribed to.</Abstract>
+					<Abstract type="html">An array of one or more NSString objects that represent the group IDs being subscribed to.</Abstract>
 				</Parameter><Parameter>
 					<Name>success</Name>
 					<Abstract type="html">A block object to be executed when subscribeToGroupsWithIDs:success:failure: succeeds. This block has no return value and takes no arguments.</Abstract>
 				</Parameter><Parameter>
 					<Name>failure</Name>
-					<Abstract type="html">A block object to be executed when subscribeToGroupsWithIDs:success:failure: fails. This block has no return value and takes one argument:, an NSError object describing the error that occurred.</Abstract>
+					<Abstract type="html">A block object to be executed when subscribeToGroupsWithIDs:success:failure: fails. This block has no return value and takes one argument: an NSError object describing the error that occurred.</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -125,7 +125,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MaaSAlerts/setDevelopmentModeEnabled:</TokenIdentifier>
-			<Abstract type="html">Optionally called inside application:didFinishLaunchingWithOptions:. By default your application will use Apple&apos;s production push notification servers. If you would like to use the sandbox push notificiation servers you would call [MaaSAlerts setDevelopmentModeEnabled:YES]. Note that even if development mode is enabled, push notifications will not work in simulator.</Abstract>
+			<Abstract type="html">Optionally called inside application:didFinishLaunchingWithOptions:. By default, your application will use Apple&apos;s production push notification servers. If you would like to use the sandbox push notificiation servers you would call [MaaSAlerts setDevelopmentModeEnabled:YES]. Note that even if development mode is enabled, push notifications will not work in the simulator.</Abstract>
 			<DeclaredIn>MaaSAlerts.h</DeclaredIn>
 			
 			<Declaration>+ (void)setDevelopmentModeEnabled:(BOOL)enabled</Declaration>
@@ -142,7 +142,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MaaSAlerts/getExtraInformationForPushID:success:failure:</TokenIdentifier>
-			<Abstract type="html">Get extra push information associated for the specified push ID. This method is deprecated and will be removed in the future. Please use getExtraInformationForAlert:success:failure:.</Abstract>
+			<Abstract type="html">Get extra push information associated for the specified pushID. This method is deprecated and will be removed in the future. Please use getExtraInformationForAlert:success:failure:.</Abstract>
 			<DeclaredIn>MaaSAlerts.h</DeclaredIn>
 			
 			<Declaration>+ (void)getExtraInformationForPushID:(NSString *)pushID success:(void ( ^ ) ( NSDictionary *extraInformation ))success failure:(void ( ^ ) ( NSError *error ))failure</Declaration>
@@ -155,7 +155,7 @@
 					<Abstract type="html">A block object to be executed when getExtraInformationForPushID:success:failure: succeeds. This block has no return value and takes one argument: the extra information received from the server. The return object will always be an NSDictionary.</Abstract>
 				</Parameter><Parameter>
 					<Name>failure</Name>
-					<Abstract type="html">A block object to be executed when getExtraInformationForPushID:success:failure: fails. This block has no return value and takes one argument:, an NSError object describing the error that occurred.</Abstract>
+					<Abstract type="html">A block object to be executed when getExtraInformationForPushID:success:failure: fails. This block has no return value and takes one argument: an NSError object describing the error that occurred.</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -178,7 +178,7 @@
 					<Abstract type="html">A block object to be executed when getExtraInformationForAlert:success:failure: succeeds. This block has no return value and takes one argument: the extra information received from the server. The return object will always be an NSDictionary.</Abstract>
 				</Parameter><Parameter>
 					<Name>failure</Name>
-					<Abstract type="html">A block object to be executed when getExtraInformationForAlert:success:failure: fails. This block has no return value and takes one argument:, an NSError object describing the error that occurred.</Abstract>
+					<Abstract type="html">A block object to be executed when getExtraInformationForAlert:success:failure: fails. This block has no return value and takes one argument: an NSError object describing the error that occurred.</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -200,7 +200,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MaaSAlerts/isOptIn</TokenIdentifier>
-			<Abstract type="html">Check push opt-in status</Abstract>
+			<Abstract type="html">Checks push opt-in status.</Abstract>
 			<DeclaredIn>MaaSAlerts.h</DeclaredIn>
 			
 			<Declaration>+ (BOOL)isOptIn</Declaration>
