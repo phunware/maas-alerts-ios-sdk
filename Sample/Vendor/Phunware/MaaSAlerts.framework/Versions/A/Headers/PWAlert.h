@@ -10,7 +10,7 @@
 extern NSInteger const kPWAlertsInvalidAlertID;
 
 /**
- `PWAlert` object encapsulates
+ `PWAlert` object encapsulates all information related to an alert. This includes but is not limited to the message, the alert ID, and the payload dictionary.
  */
 
 @interface PWAlert : NSObject <NSCoding, NSCopying>
@@ -21,12 +21,12 @@ extern NSInteger const kPWAlertsInvalidAlertID;
 @property (nonatomic, strong) NSString *message;
 
 /**
- An `NSInteger` value that identifies the alert ID.
+ An `NSInteger` value that identifies the Alert ID.
  */
 @property (nonatomic, strong) NSString *alertID;
 
 /**
- An `NSString` value that identifies the `NSDictionary` payload that was used to initialize the `PWAlert` object. You can use this payload to fetch custom arguments
+ An `NSString` value that identifies the `NSDictionary` payload that was used to initialize the `PWAlert` object. You can use this payload to fetch custom arguments.
  */
 @property (nonatomic, strong) NSDictionary *payload;
 
@@ -36,7 +36,7 @@ extern NSInteger const kPWAlertsInvalidAlertID;
  @param userInfo The userInfo which encapsulates the notification. This is fetched from the following locations:
  
  - `application:didReceiveRemoteNotification:` passed a userInfo `NSDictionary`. You can use this dictionary to instantiate a `PWAlert` object.
- -  `application:didFinishLaunchingWithOptions:` may have a `UIApplicationLaunchOptionsRemoteNotificationKey` if the application was launched through a push notification. You can extract the userInfo from the launchOptions `NSDictionary` using the aformentioned key.
+ - `application:didFinishLaunchingWithOptions:` may have a `UIApplicationLaunchOptionsRemoteNotificationKey` if the application was launched through a push notification. You can extract the userInfo from the launchOptions `NSDictionary` using the aformentioned key.
  */
 - (instancetype)initWithNotificationUserInfo:(NSDictionary *)userInfo;
 
