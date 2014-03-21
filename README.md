@@ -120,10 +120,10 @@ edGroups    } failure:^(NSError *error) {
 
 
 
-Optional
+Push Notification Metadata
 --------
 
-Fetching extra information associated with a push notification using MaaS Alerts can be done by using: *getExtraInformationForAlert:success:failure:* 
+Fetching metadata associated with a push notification using MaaS Alerts can be done by using: *getExtraInformationForAlert:success:failure:* 
 
 ````objective-c
 // When receiving a notification you can save save the data in a PWAlert object
