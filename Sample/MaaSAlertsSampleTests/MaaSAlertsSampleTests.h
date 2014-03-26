@@ -5,8 +5,8 @@
 //  Copyright (c) 2013 Phunware. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface MaaSAlertsSampleTests : SenTestCase
+@interface MaaSAlertsSampleTests : XCTestCase
 
 @end

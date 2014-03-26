@@ -1,5 +1,8 @@
 #MaaSAlerts Changelog
 
+##1.2.1 (Wednesday, March 26th, 2014)
+ * Adding arm64 support
+
 ##1.2.0 (Monday, December 23rd, 2013)
  * Added support for custom alerts (direct, location based, etc)
  * Added new object to encapsulate a notification, PWAlert

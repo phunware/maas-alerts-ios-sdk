@@ -10,7 +10,7 @@
 extern NSInteger const kPWAlertsInvalidAlertID;
 
 /**
- `PWAlert` object encapsulates all information related to an alert. This includes but is not limited to the message, the alert ID, and the payload dictionary.
+ `PWAlert` object encapsulates all information related to an alert. This includes but is not limited to: the message, the Alert ID and the payload dictionary.
  */
 
 @interface PWAlert : NSObject <NSCoding, NSCopying>

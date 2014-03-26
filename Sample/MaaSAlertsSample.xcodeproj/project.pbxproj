@@ -15,7 +15,6 @@
 		A3BB2FE216AE248F00702C94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3BB2FE016AE248F00702C94 /* InfoPlist.strings */; };
 		A3BB2FE416AE248F00702C94 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BB2FE316AE248F00702C94 /* main.m */; };
 		A3BB2FE816AE248F00702C94 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BB2FE716AE248F00702C94 /* AppDelegate.m */; };
-		A3BB2FF616AE248F00702C94 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BB2FF516AE248F00702C94 /* SenTestingKit.framework */; };
 		A3BB2FF716AE248F00702C94 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BB2FD716AE248F00702C94 /* UIKit.framework */; };
 		A3BB2FF816AE248F00702C94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BB2FD916AE248F00702C94 /* Foundation.framework */; };
 		A3BB300016AE248F00702C94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3BB2FFE16AE248F00702C94 /* InfoPlist.strings */; };
@@ -70,7 +69,6 @@
 		A3BB2FE616AE248F00702C94 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A3BB2FE716AE248F00702C94 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A3BB2FF416AE248F00702C94 /* MaaSSampleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaaSSampleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A3BB2FF516AE248F00702C94 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		A3BB2FFD16AE248F00702C94 /* MaaSAlertsSampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MaaSAlertsSampleTests-Info.plist"; sourceTree = "<group>"; };
 		A3BB2FFF16AE248F00702C94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A3BB300116AE248F00702C94 /* MaaSAlertsSampleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaaSAlertsSampleTests.h; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3BB2FF616AE248F00702C94 /* SenTestingKit.framework in Frameworks */,
 				A3BB2FF716AE248F00702C94 /* UIKit.framework in Frameworks */,
 				A3BB2FF816AE248F00702C94 /* Foundation.framework in Frameworks */,
 			);
@@ -167,7 +164,6 @@
 				A3BB2FD716AE248F00702C94 /* UIKit.framework */,
 				A3BB2FD916AE248F00702C94 /* Foundation.framework */,
 				A3BB2FDB16AE248F00702C94 /* CoreGraphics.framework */,
-				A3BB2FF516AE248F00702C94 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -309,7 +305,7 @@
 			name = MaaSSampleTests;
 			productName = MaaSAlertsSampleTests;
 			productReference = A3BB2FF416AE248F00702C94 /* MaaSSampleTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -317,7 +313,8 @@
 		A3BB2FCA16AE248F00702C94 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastTestingUpgradeCheck = 0510;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Phunware;
 			};
 			buildConfigurationList = A3BB2FCD16AE248F00702C94 /* Build configuration list for PBXProject "MaaSAlertsSample" */;
@@ -535,21 +532,16 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MaaSSample.app/MaaSSample";
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\\\"$(SDKROOT)/Developer/Library/Frameworks\\\"",
+					"\\\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\\\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MaaSAlertsSample/MaaSAlertsSample-Prefix.pch";
 				INFOPLIST_FILE = "MaaSAlertsSampleTests/MaaSAlertsSampleTests-Info.plist";
-				OTHER_LDFLAGS = (
-					"-framework",
-					SenTestingKit,
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Development;
 		};
@@ -558,21 +550,16 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MaaSSample.app/MaaSSample";
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\\\"$(SDKROOT)/Developer/Library/Frameworks\\\"",
+					"\\\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\\\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MaaSAlertsSample/MaaSAlertsSample-Prefix.pch";
 				INFOPLIST_FILE = "MaaSAlertsSampleTests/MaaSAlertsSampleTests-Info.plist";
-				OTHER_LDFLAGS = (
-					"-framework",
-					SenTestingKit,
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Distribution;
 		};
@@ -627,21 +614,16 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MaaSSample.app/MaaSSample";
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\\\"$(SDKROOT)/Developer/Library/Frameworks\\\"",
+					"\\\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\\\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MaaSAlertsSample/MaaSAlertsSample-Prefix.pch";
 				INFOPLIST_FILE = "MaaSAlertsSampleTests/MaaSAlertsSampleTests-Info.plist";
-				OTHER_LDFLAGS = (
-					"-framework",
-					SenTestingKit,
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = AdHoc;
 		};
