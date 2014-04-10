@@ -89,35 +89,40 @@ Apple has three primary methods for handling remote notifications. You will need
 }
 ````
 
-For a complete example, see https://github.com/phunware/maas-alerts-ios-sdk/Sample
+For a complete example, see https://github.com/phunware/maas-alerts-ios-sdk/tree/master/Sample
 
 
 
-Subscription Groups
--------------------
+Alert Segments
+--------------
 
-The MaaS portal provides the ability to setup subscribtion groups for filtered alerts and notifications. There are two MaaS Alerts SDK methods that facilitate this: *getSubscriptionGroupsWithSuccess:failure:* and *subscribeToGroupsWithIDs:success:failure:*
+The MaaS portal provides the ability to setup alert segments for filtered alerts and notifications. There are two MaaS Alerts SDK methods that facilitate this: *getAlertSegmentsWithSuccess:failure:* and *updateAlertSegments:success:failure:*.
 
 ````objective-c
 // Fetch an array of the available subscriptions.
-[MaaSAlerts getSubscriptionGroupsWithSuccess:^(NSArray *groups) {
-        // Display the available subscription groups to the user.
-        // The groups array will contain dictionary objects the conform to the following structure: {@"id" : @"SUBCRIPTION_GROUP_ID", @"name" : @"SUBSCRIPTION_GROUP_NAME"}
+[MaaSAlerts getAlertSegmentsWithSuccess:^(NSArray *segments) {
+        // Display the available alert segments to the user.
+        // The segments array will contain PWAlertSegment objects
     } failure:^(NSError *error) {
 		// Handle error.
     }];
     
     
-// To update the subscription groups you would make the following call:
-NSArray *subscribedGroups = @[@"SUBSCRIPTION_GROUP_ID", ...];
-[MaaSAlerts subscribeToGroupsWithIDs:subscribedGroups success:^{
+// To update the alert segments you would make the following call:
+NSArray *alertSegments = @[segmentOne, segmentFour, ...];
+[MaaSAlerts updateAlertSegments:alertSegments success:^{
         // Handle success.
-edGroups    } failure:^(NSError *error) {
+    } failure:^(NSError *error) {
         // Handle error.
     }];
 }
 ````
 
+The alert segments are represented by PWAlertSegment objects.  These objects have a name (NSString), identifier (NSString), subscription flag and array of child segments.  When updating alert segment subscriptions, the subscription flag should be set or cleared on each segment as needed.  Segments not passed will be treated as unsubscribed.  The developer no longer has to maintain a list of subscribed alert segments as the SDK will now do that automatically.
+
+*Note:* Please use the new methods above for managing alert segments as the following methods have been deprecated:
+- getSubscriptionGroupsWithSuccess:failure:
+- subscribeToGroupsWithIDs:success:failure:
 
 
 Push Notification Metadata
