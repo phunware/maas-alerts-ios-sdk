@@ -1,5 +1,15 @@
 #MaaSAlerts Changelog
 
+##1.3.0 (Friday, April 11, 2014)
+ * Renamed MaaSAlerts to PWAlerts
+ * Added PWAlertSegment class which allows easy management of segment subscriptions
+ * Moved subscription management state into the PWAlerts SDK leveraging PWAlertSegment -- see documentation for more details
+ * Added support for nested alert segments
+ * Added new method: `getAlertSegmentsWithSuccess:failure:`
+ * Deprecated method: `getSubscriptionGroupsWithSuccess:failure:`
+ * Added new method: `updateAlertSegments:success:failure:`
+ * Deprecated method: `subscribeToGroupsWithIDs:success:failure:`
+
 ##1.2.1 (Wednesday, March 26th, 2014)
  * Adding arm64 support
 

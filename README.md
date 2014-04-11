@@ -19,7 +19,7 @@ Requirements
 Installation
 ------------
 
-PW Alerts has a dependency on MaaSCore.framework, which is available here: https://github.com/phunware/maas-core-ios-sdk
+PWAlerts has a dependency on MaaSCore.framework, which is available here: https://github.com/phunware/maas-core-ios-sdk
 
 It's recommended that you add the MaaS frameworks to the 'Vendor/Phunware' directory. Then add the MaaSCore.framework and PWAlerts.framework to your Xcode project.
 
