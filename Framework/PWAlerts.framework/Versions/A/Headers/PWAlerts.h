@@ -1,28 +1,32 @@
 //
-//  MaaSAlerts.h
-//  MaaSAlerts
+//  PWAlerts.h
+//  PWAlerts
 //
 //  Copyright (c) 2013 Phunware. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import <MaaSAlerts/PWAlert.h>
+#import <PWAlerts/PWAlert.h>
+#import <PWAlerts/PWAlertSegment.h>
 
 /**
-  `MaaSAlerts` enables easy implementation of alerts and notifications. It encapsulates advanced push features such as subscriber groups and fetching extra information related to a push notification.
+  `PWAlerts` enables easy implementation of alerts and notifications. It encapsulates advanced push features such as subscriber groups and fetching extra information related to a push notification.
  
- ## Subscription Groups
+ ## Alert Segments
  
- MaaSAlerts provides the ability to provide users with a list of subscription groups from which more filtered alerts and notifications can be received. There are two methods that facilitate this: `getSubscriptionGroupsWithSuccess:failure:` and `subscribeToGroupsWithIDs:success:failure:`.
+ PWAlerts provides the ability to provide users with a hierarchy of alert segments from which one or more filtered alerts and notifications can be received. There are two methods that facilitate this: `getAlertSegmentsWithSuccess:failure:` and `updateAlertSegments:success:failure:`.
  
  ## Development
  
- During the development of your application, you may want to utilize Apple's push notification sandbox. To enable development mode for MaaSAlerts you would call `[MaaSAlerts setDevelopmentModeEnabled:YES]`. If you omit this call, MaaSAlerts will default to Apple's production push notification system.
+ During the development of your application, you may want to utilize Apple's push notification sandbox. To enable development mode for PWAlerts you would call `[PWAlerts setDevelopmentModeEnabled:YES]`. If you omit this call, PWAlerts will default to Apple's production push notification system.
  */
 
 extern NSString *const kPWAlertsDeepLinkURL;
 
-@interface MaaSAlerts : NSObject
+typedef void (^PWAlertsSegmentSuccess)(NSArray *segments);
+typedef void (^PWAlertsSegmentFailure)(NSError *error);
+
+@interface PWAlerts : NSObject
 
 ///-----------------------
 /// @name Required Methods
@@ -57,7 +61,33 @@ extern NSString *const kPWAlertsDeepLinkURL;
 + (void)didReceiveRemoteNotificationForPushID:(NSString *)pushID;
 
 ///--------------------------
-/// @name Subscription Groups
+/// @name Alert Segments
+///--------------------------
+
+/**
+ Get list of all alert segments and and their current subscription status.
+ 
+ @param success A block object to be executed when `getAlertSegmentsWithSuccess:failure:` succeeds.  This block has no return value and takes on argument: the alert segments received from the server (an `NSArray` object that contains the alert segments as `PWAlertSegment` objects.
+ @param failure A block object to be executed when `getAlertSegmentsWithSuccess:failure:` fails.  This block has no return value and takes one argument: an NSError object describing the error that occurred.
+ @discussion This method replaces the deprecated method `getSubscriptionGroupsWithSuccess:failure:`.
+ */
+
++ (void)getAlertSegmentsWithSuccess:(PWAlertsSegmentSuccess)success failure:(PWAlertsSegmentFailure)failure;
+
+/**
+ Update the alert segment subscriptions.
+ 
+ @param segments An array of one or more `PWAlertSegment` objects that represent the alert subscriptions.
+ @param success A block object to be executed when `updateAlertSegments:success:failure` succeeds.  This block has no return value and takes no arguments.
+ @param failure A block object to be executed when `updateAlertSegments:success:failure:` fails.  This block has no return value and takes one argument: an `NSError` object describing the error that occurred.
+ @discussion This method replaces the deprecated method `subscribeToGroupsWithIDs:success:failure:`. It's very important that you always pass back all known PWAlertSegment objects as this method will subscribe to all `PWAlertSegments` objects that are marked for subscription and unsubscribe from all other segments.
+ */
+
++ (void)updateAlertSegments:(NSArray *)segments success:(void(^)())success failure:(PWAlertsSegmentFailure)failure;
+
+
+///--------------------------
+/// @name Subscription Groups (Deprecated)
 ///--------------------------
 
 /**
@@ -65,8 +95,9 @@ extern NSString *const kPWAlertsDeepLinkURL;
  
  @param success A block object to be executed when `getSubscriptionGroupsWithSuccess:success:failure:` succeeds. This block has no return value and takes one argument: the groups received from the server (an `NSArray` object that contains the subscription groups in the following format `{@"id" : @"12", @"name" : @"Subscription group name"}`).
  @param failure A block object to be executed when `getSubscriptionGroupsWithSuccess:success:failure:` fails. This block has no return value and takes one argument: an NSError object describing the error that occurred.
+  @discussion This method has been deprecated. Please use `getAlertSegmentsWithSuccess:failure:`.
  */
-+ (void)getSubscriptionGroupsWithSuccess:(void (^)(NSArray *groups))success failure:(void (^)(NSError *error))failure;
++ (void)getSubscriptionGroupsWithSuccess:(void (^)(NSArray *groups))success failure:(void (^)(NSError *error))failure __attribute__((deprecated));
 
 /**
  Subscribe to a list of groups.
@@ -74,15 +105,16 @@ extern NSString *const kPWAlertsDeepLinkURL;
  @param groupIDs An array of one or more `NSString` objects that represent the group IDs being subscribed to.
  @param success A block object to be executed when `subscribeToGroupsWithIDs:success:failure:` succeeds. This block has no return value and takes no arguments.
  @param failure A block object to be executed when `subscribeToGroupsWithIDs:success:failure:` fails. This block has no return value and takes one argument: an `NSError` object describing the error that occurred.
+ @discussion This method has been deprecated. Please use `updateAlertSegments:success:failure:`.
  */
-+ (void)subscribeToGroupsWithIDs:(NSArray *)groupIDs success:(void(^)())success failure:(void (^)(NSError *error))failure;
++ (void)subscribeToGroupsWithIDs:(NSArray *)groupIDs success:(void(^)())success failure:(void (^)(NSError *error))failure __attribute__((deprecated));
 
 ///--------------------
 /// @name Other Methods
 ///--------------------
 
 /**
- Optionally called inside `application:didFinishLaunchingWithOptions:`. By default, your application will use Apple's production push notification servers. If you would like to use the sandbox push notificiation servers you would call `[MaaSAlerts setDevelopmentModeEnabled:YES]`. Note that even if development mode is enabled, push notifications will not work in the simulator.
+ Optionally called inside `application:didFinishLaunchingWithOptions:`. By default, your application will use Apple's production push notification servers. If you would like to use the sandbox push notificiation servers you would call `[PWAlerts setDevelopmentModeEnabled:YES]`. Note that even if development mode is enabled, push notifications will not work in the simulator.
  
  @param enabled A boolean variable that indicates whether or not push development mode is enabled.
  */

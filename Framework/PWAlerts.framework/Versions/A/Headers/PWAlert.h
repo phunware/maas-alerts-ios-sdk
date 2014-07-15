@@ -1,6 +1,6 @@
 //
 //  PWAlert.h
-//  MaaSAlerts
+//  PWAlerts
 //
 //  Copyright (c) 2013 Phunware. All rights reserved.
 //
