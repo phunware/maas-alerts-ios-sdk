@@ -1,6 +1,21 @@
-#MaaSAlerts Changelog
+#PWAlerts Changelog
 
-##1.3.0 (Friday, April 11, 2014)
+##1.3.1 (Wednesday, September 17th, 2014)
+ * Updated PWAlerts to be compatible with iOS 8
+ * **NOTE**: This is a required update. If you compile against the iOS 8 SDK using an older version of PWAlerts SDK **it will not register properly for remote notifications in iOS 8**.
+ * The application developer is now responsible for registering for remote notifications using the apple provided APIs.  The following code or something like it should be present your application delegate or when you want to register for remote notifications:
+ ```
+if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil];
+        [application registerUserNotificationSettings:settings];
+        [application registerForRemoteNotifications];
+    }
+    else {
+        [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert];
+    }
+```
+
+##1.3.0 (Friday, April 11th, 2014)
  * Renamed MaaSAlerts to PWAlerts
  * Added PWAlertSegment class which allows easy management of segment subscriptions
  * Moved subscription management state into the PWAlerts SDK leveraging PWAlertSegment -- see documentation for more details

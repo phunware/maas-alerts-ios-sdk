@@ -2,7 +2,6 @@
 //  PWAlertSegment.h
 //  PWAlerts
 //
-//  Created by Sam Odom on 4/7/14.
 //  Copyright (c) 2014 Phunware. All rights reserved.
 //
 
@@ -18,25 +17,25 @@
  An `NSString` value that represents the readable name of an alert segment.
  */
 
-@property (readonly) NSString *name;
+@property (strong, readonly) NSString *name;
 
 /**
  An `NSString` value that represents the unique identifier of an alert segment.
  */
 
-@property (readonly) NSString *identifier;
+@property (strong, readonly) NSString *identifier;
 
 /**
  A `BOOL` value that represents the current or desired subscription state of the alert segment.
  */
 
-@property (nonatomic, getter = isSubscribed) BOOL subscribed;
+@property (getter = isSubscribed) BOOL subscribed;
 
 /**
  An `NSArray` value that represents the child alert segment objects nested under the given alert segment.
  */
 
-@property (readonly) NSArray *segments;
+@property (strong, readonly) NSArray *segments;
 
 
 @end

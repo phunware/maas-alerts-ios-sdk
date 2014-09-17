@@ -1,7 +1,7 @@
 PWAlerts SDK for iOS
 ==================
 
-Version 1.3.0
+Version 1.3.1
 
 This is Phunware's iOS SDK for the Alerts & Notifications MaaS module. Visit http://maas.phunware.com/ for more details and to sign up.
 
@@ -12,12 +12,17 @@ Requirements
 
 - MaaSCore v1.2.0 or greater
 - iOS 5.0 or greater
-- Xcode 4.4 or greater
+- Xcode 5 or greater
 
 
 
 Installation
 ------------
+
+The recommended way to use PWAlerts is via [CocoaPods](http://cocoapods.org). Add the following pod to your `Podfile` to use PWAlerts:
+````
+pod 'PWAlerts', '~>1.3.0'
+````
 
 PWAlerts has a dependency on MaaSCore.framework, which is available here: https://github.com/phunware/maas-core-ios-sdk
 
@@ -66,6 +71,19 @@ Inside your application delegate, you will need to initialize MaaSCore in the ap
     ...
 }
 ````
+
+As of PWAlerts v1.3.1 the application *developer* is responsible with registering for remote notifications with Apple. The following code or something like it should be present your application delegate or when you want to register for remote notifications:
+
+```
+if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil];
+        [application registerUserNotificationSettings:settings];
+        [application registerForRemoteNotifications];
+    }
+    else {
+        [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert];
+    }
+```
 
 Apple has three primary methods for handling remote notifications. You will need to implement these in your application delegate, forwarding the results to PWAlerts:
 

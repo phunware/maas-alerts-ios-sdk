@@ -28,6 +28,14 @@
     // Set the log level to debug so we can see what's going on
     [MaaSCore setLoggingLevel:MaaSLogLevel_Debug forService:[PWAlerts serviceName]];
     
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil];
+        [application registerUserNotificationSettings:settings];
+        [application registerForRemoteNotifications];
+    }
+    else {
+        [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert];
+    }
 
     return YES;
 }
@@ -48,26 +56,36 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        UILocalNotification *localNotification = [UILocalNotification new];
-        localNotification.alertBody = @"application:didReceiveRemoteNotification:";
-        localNotification.alertAction = @"OK";
-        
-        [[UIApplication sharedApplication] presentLocalNotificationNow:localNotification];
-    });
+    [self application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:nil];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    [self logRemoteNotificationReceipt:userInfo];
     
     [self clearNotificationCenter];
     [PWAlerts didReceiveRemoteNotification:userInfo];
-    [PWLogger log:[NSString stringWithFormat:@"didReceiveRemoteNotification: %@", userInfo]];
     
+    if (application.applicationState == UIApplicationStateActive) {
+        [self displayAlert:userInfo];
+    }
+    
+    PWAlert *alert = [[PWAlert alloc] initWithNotificationUserInfo:userInfo];
+    [PWLogger log:[NSString stringWithFormat:@"PWAlert = %@", alert]];
+    [self logAlert:alert];
+}
+
+- (void)logRemoteNotificationReceipt:(NSDictionary*)userInfo {
+    [PWLogger log:[NSString stringWithFormat:@"didReceiveRemoteNotification: %@", userInfo]];
+}
+
+- (void)displayAlert:(NSDictionary*)userInfo {
     NSString *message = [[[userInfo objectForKey:@"aps"] objectForKey:@"alert"] objectForKey:@"body"];
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"PWAlerts" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alertView show];
-    
-    PWAlert *alert = [[PWAlert alloc] initWithNotificationUserInfo:userInfo];
-    
-    [PWLogger log:[NSString stringWithFormat:@"PWAlert = %@", alert]];
-    
+}
+
+- (void)logAlert:(PWAlert*)alert {
     if (alert) {
         [PWAlerts getExtraInformationForAlert:alert success:^(NSDictionary *extraInformation) {
             [PWLogger log:[NSString stringWithFormat:@"Fetched extra information for alert. Extra information: %@", extraInformation]];
@@ -76,7 +94,7 @@
         }];
     }
     else {
-        [PWLogger log:@"wARNING: PWAlert was nil! This shouldn't happen!!!"];
+        [PWLogger log:@"WARNING: PWAlert was nil! This shouldn't happen!!!"];
     }
 }
 

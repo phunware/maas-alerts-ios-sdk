@@ -16,19 +16,19 @@ extern NSInteger const kPWAlertsInvalidAlertID;
 @interface PWAlert : NSObject <NSCoding, NSCopying>
 
 /**
- An `NSString` value that identifies the alert message.
+ An `NSString` value that represents the alert message.
  */
-@property (nonatomic, strong) NSString *message;
+@property (strong, readonly) NSString *message;
 
 /**
- An `NSInteger` value that identifies the Alert ID.
+ An `NSInteger` value that represents the Alert ID.
  */
-@property (nonatomic, strong) NSString *alertID;
+@property (readonly) NSInteger alertID;
 
 /**
- An `NSString` value that identifies the `NSDictionary` payload that was used to initialize the `PWAlert` object. You can use this payload to fetch custom arguments.
+ An `NSDictionary` value that represents the payload that was used to initialize the `PWAlert` object. You can use this payload to fetch custom arguments.
  */
-@property (nonatomic, strong) NSDictionary *payload;
+@property (strong, readonly) NSDictionary *payload;
 
 /**
  Initializes a `PWAlert` object. You can only initialize a `PWAlert` object with a valid userInfo dictionary.
