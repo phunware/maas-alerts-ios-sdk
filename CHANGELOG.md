@@ -1,5 +1,8 @@
 #PWAlerts Changelog
 
+##1.3.2 (Monday, November 3rd, 2014)
+ * Added support for encryption
+
 ##1.3.1 (Wednesday, September 17th, 2014)
  * Updated PWAlerts to be compatible with iOS 8
  * **NOTE**: This is a required update. If you compile against the iOS 8 SDK using an older version of PWAlerts SDK **it will not register properly for remote notifications in iOS 8**.

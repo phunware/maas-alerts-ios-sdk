@@ -8,6 +8,6 @@
 #ifndef PWAlerts_PWAlertsVersion_h
 #define PWAlerts_PWAlertsVersion_h
 
-#define        PWAlerts_VERSION  @"1.3.1"
+#define        PWAlerts_VERSION  @"1.3.2"
 
 #endif
