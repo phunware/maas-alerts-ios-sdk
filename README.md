@@ -1,4 +1,4 @@
-PWAlerts SDK for iOS
+MaaS Alerts SDK for iOS
 ==================
 
 Version 1.3.2
