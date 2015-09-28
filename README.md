@@ -1,7 +1,7 @@
 MaaS Alerts SDK for iOS
 ==================
 
-Version 1.3.2
+Version 1.4.0
 
 This is Phunware's iOS SDK for the Alerts & Notifications module. Visit http://maas.phunware.com/ for more details and to sign up.
 
@@ -9,9 +9,9 @@ This is Phunware's iOS SDK for the Alerts & Notifications module. Visit http://m
 Requirements
 ------------
 
-- MaaSCore v1.3.0 or greater
-- iOS 6.0 or greater
-- Xcode 5 or greater
+- PWCore v2.0.0 or greater
+- iOS 7.0 or greater
+- Xcode 6 or greater
 
 
 
@@ -23,13 +23,13 @@ The recommended way to use PWAlerts is via [CocoaPods](http://cocoapods.org). Ad
 pod 'PWAlerts', '~>1.3.0'
 ````
 
-PWAlerts has a dependency on MaaSCore.framework, which is available here: https://github.com/phunware/maas-core-ios-sdk
+PWAlerts has a dependency on PWCore.framework, which is available here: https://github.com/phunware/maas-core-ios-sdk
 
-It's recommended that you add the MaaS frameworks to the 'Vendor/Phunware' directory. Then add the MaaSCore.framework and PWAlerts.framework to your Xcode project.
+It's recommended that you add the MaaS frameworks to the 'Vendor/Phunware' directory. Then add the PWCore.framework and PWAlerts.framework to your Xcode project.
 
 The following frameworks are required:
 ````
-MaaSCore.framework
+PWCore.framework
 ````
 
 Scroll down for implementation details.
@@ -53,17 +53,17 @@ Application Setup
 At the top of your application delegate (.m) file, add the following:
 
 ````objective-c
-#import <MaaSCore/MaaSCore.h>
+#import <PWCore/PWCore.h>
 #import <PWAlerts/PWAlerts.h>
 ````
 
-Inside your application delegate, you will need to initialize MaaSCore in the application:didFinishLaunchingWithOptions: method. For more detailed MaaSCore installation instructions, please see: https://github.com/phunware/maas-core-ios-sdk#installation
+Inside your application delegate, you will need to initialize PWCore in the application:didFinishLaunchingWithOptions: method. For more detailed PWCore installation instructions, please see: https://github.com/phunware/maas-core-ios-sdk#installation
 
 ````objective-c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // These values can be found for your application in the MaaS portal.
-    [MaaSCore setApplicationID:@"APPLICATION_ID"
+    [PWCore setApplicationID:@"APPLICATION_ID"
     			  setAccessKey:@"ACCESS_KEY"
                   signatureKey:@"SIGNATURE_KEY"
                  encryptionKey:@"ENCRYPT_KEY"]; // Currently unused. You can place any NSString value here.

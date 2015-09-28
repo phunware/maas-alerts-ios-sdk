@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Phunware, Inc. All rights reserved.
 //
 
-#import <MaaSCore/MaaSCore.h>
+#import <PWCore/PWCore.h>
 #import <PWAlerts/PWAlerts.h>
 
 #import "PWAppDelegate.h"
@@ -20,14 +20,11 @@
 
 #warning Update these credentials with your own from MaaS Portal
     // Initialize MaaSCore with your credentials
-    [MaaSCore setApplicationID:@"YOUR_APPLICATION_ID"
+    [PWCore setApplicationID:@"YOUR_APPLICATION_ID"
                      accessKey:@"YOUR_ACCESS_KEY"
                   signatureKey:@"YOUR_SIGNATURE_KEY"
                  encryptionKey:@"nada"];
 
-    // Set the log level to debug so we can see what's going on
-    [MaaSCore setLoggingLevel:MaaSLogLevel_Debug forService:[PWAlerts serviceName]];
-    
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil];
         [application registerUserNotificationSettings:settings];

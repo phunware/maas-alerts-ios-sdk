@@ -1,5 +1,10 @@
 #PWAlerts Changelog
 
+##1.3.2 (Wednesday, September 30th, 2015)
+ * Added support for PWCore v2.0.0
+ * Updated internal networking interfaces
+ * Added ability to enable/disable Phunware notifications. Please see `+ (void)enabledAlerts` and `+ (void)disableAlerts` methods in `PWAlerts.h` for more information.
+
 ##1.3.2 (Monday, November 3rd, 2014)
  * Added support for encryption
 

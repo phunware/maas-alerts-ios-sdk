@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Phunware, Inc. All rights reserved.
 //
 
-#import <MaaSCore/MaaSCore.h>
+#import <PWCore/PWCore.h>
 #import <PWAlerts/PWAlerts.h>
 
 #import "PWDiagnosticsController.h"
@@ -17,7 +17,7 @@
 #pragma mark - Actions
 
 - (void)refresh:(id)sender {
-    self.textView.text = [NSString stringWithFormat:@"MaaS Application ID:\n%@\n\nDevice Token:\n%@\n\nDevice ID:\n%@\n\n", [MaaSCore applicationID], [PWAlerts APNSToken], [MaaSCore deviceID]];
+    self.textView.text = [NSString stringWithFormat:@"MaaS Application ID:\n%@\n\nDevice Token:\n%@\n\nDevice ID:\n%@\n\n", [PWCore applicationID], [PWAlerts APNSToken], [PWCore deviceID]];
 }
 
 - (void)email:(id)sender {

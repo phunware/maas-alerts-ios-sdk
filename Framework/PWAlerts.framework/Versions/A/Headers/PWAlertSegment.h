@@ -2,13 +2,13 @@
 //  PWAlertSegment.h
 //  PWAlerts
 //
-//  Copyright (c) 2014 Phunware. All rights reserved.
+//  Copyright (c) 2015 Phunware. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 /**
- `PWAlertSegment` encapsulates all of the information related to an alert segment.  This includes the name, identifier, child segments and subscription flag.
+ `PWAlertSegment` encapsulates all of the information related to an alert segment. This includes the name, identifier, child segments and subscription flag.
  */
 
 @interface PWAlertSegment : NSObject <NSCoding>

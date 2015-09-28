@@ -30,8 +30,8 @@
 		0A2756B118F6EA67003DC354 /* PWLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2756B018F6EA67003DC354 /* PWLogger.m */; };
 		0A2756B318F6EAF3003DC354 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A2756B218F6EAF3003DC354 /* Security.framework */; };
 		0A2756BB18F7187A003DC354 /* PWSegmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2756BA18F7187A003DC354 /* PWSegmentCell.m */; };
-		B065943918F8663100388B0A /* MaaSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065943718F8663100388B0A /* MaaSCore.framework */; };
 		B065943A18F8663100388B0A /* PWAlerts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065943818F8663100388B0A /* PWAlerts.framework */; };
+		B0B223BD1BB9A51200DFA35D /* PWCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B223BC1BB9A51200DFA35D /* PWCore.framework */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,8 +95,8 @@
 		0A2756B218F6EAF3003DC354 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		0A2756B918F7187A003DC354 /* PWSegmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWSegmentCell.h; sourceTree = "<group>"; };
 		0A2756BA18F7187A003DC354 /* PWSegmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWSegmentCell.m; sourceTree = "<group>"; };
-		B065943718F8663100388B0A /* MaaSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MaaSCore.framework; sourceTree = "<group>"; };
 		B065943818F8663100388B0A /* PWAlerts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PWAlerts.framework; sourceTree = "<group>"; };
+		B0B223BC1BB9A51200DFA35D /* PWCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PWCore.framework; path = "../../../../maas-analytics-ios-sdk/Sample/SDKS/PWCore.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,13 +106,13 @@
 			files = (
 				B065943A18F8663100388B0A /* PWAlerts.framework in Frameworks */,
 				0A2756B318F6EAF3003DC354 /* Security.framework in Frameworks */,
+				B0B223BD1BB9A51200DFA35D /* PWCore.framework in Frameworks */,
 				0A2756AE18F6E9EE003DC354 /* AdSupport.framework in Frameworks */,
 				0A2756AC18F6E9EA003DC354 /* SystemConfiguration.framework in Frameworks */,
 				0A2756AA18F6E9E2003DC354 /* MobileCoreServices.framework in Frameworks */,
 				0A2756A818F6E9DA003DC354 /* CoreTelephony.framework in Frameworks */,
 				0A27562E18F6E19F003DC354 /* CoreGraphics.framework in Frameworks */,
 				0A27563018F6E19F003DC354 /* UIKit.framework in Frameworks */,
-				B065943918F8663100388B0A /* MaaSCore.framework in Frameworks */,
 				0A27562C18F6E19F003DC354 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,7 +295,7 @@
 		B065943618F8663100388B0A /* Phunware */ = {
 			isa = PBXGroup;
 			children = (
-				B065943718F8663100388B0A /* MaaSCore.framework */,
+				B0B223BC1BB9A51200DFA35D /* PWCore.framework */,
 				B065943818F8663100388B0A /* PWAlerts.framework */,
 			);
 			path = Phunware;
@@ -528,7 +528,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PWAlertsSample/PWAlertsSample-Prefix.pch";
 				INFOPLIST_FILE = "PWAlertsSample/PWAlertsSample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -547,7 +547,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PWAlertsSample/PWAlertsSample-Prefix.pch";
 				INFOPLIST_FILE = "PWAlertsSample/PWAlertsSample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
