@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>MaaSAlerts Class Reference</title>
+		<title>PWAlerts Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -11,12 +11,12 @@
 	<body>
 		<header id="top_header">
 			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">MaaSAlerts </a></h1>
+				<h1><a id="libraryTitle" href="../index.html">PWAlerts </a></h1>
 				<a id="developerHome" href="../index.html">Phunware, Inc.</a>
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">MaaSAlerts Class Reference</h1>
+				<h1 class="hideInXcode">PWAlerts Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -43,6 +43,8 @@
 	
 	<option value="//api/name/APNSToken">&nbsp;&nbsp;&nbsp;&nbsp;+ APNSToken</option>
 	
+	<option value="//api/name/alertsEnabled">&nbsp;&nbsp;&nbsp;&nbsp;+ alertsEnabled</option>
+	
 	<option value="//api/name/didFailToRegisterForRemoteNotificationsWithError:">&nbsp;&nbsp;&nbsp;&nbsp;+ didFailToRegisterForRemoteNotificationsWithError:</option>
 	
 	<option value="//api/name/didReceiveRemoteNotification:">&nbsp;&nbsp;&nbsp;&nbsp;+ didReceiveRemoteNotification:</option>
@@ -51,11 +53,13 @@
 	
 	<option value="//api/name/didRegisterForRemoteNotificationsWithDeviceToken:">&nbsp;&nbsp;&nbsp;&nbsp;+ didRegisterForRemoteNotificationsWithDeviceToken:</option>
 	
+	<option value="//api/name/disableAlerts">&nbsp;&nbsp;&nbsp;&nbsp;+ disableAlerts</option>
+	
+	<option value="//api/name/enableAlerts">&nbsp;&nbsp;&nbsp;&nbsp;+ enableAlerts</option>
+	
+	<option value="//api/name/getAlertSegmentsWithSuccess:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ getAlertSegmentsWithSuccess:failure:</option>
+	
 	<option value="//api/name/getExtraInformationForAlert:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ getExtraInformationForAlert:success:failure:</option>
-	
-	<option value="//api/name/getExtraInformationForPushID:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ getExtraInformationForPushID:success:failure:</option>
-	
-	<option value="//api/name/getSubscriptionGroupsWithSuccess:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ getSubscriptionGroupsWithSuccess:failure:</option>
 	
 	<option value="//api/name/isOptIn">&nbsp;&nbsp;&nbsp;&nbsp;+ isOptIn</option>
 	
@@ -63,7 +67,7 @@
 	
 	<option value="//api/name/setDevelopmentModeEnabled:">&nbsp;&nbsp;&nbsp;&nbsp;+ setDevelopmentModeEnabled:</option>
 	
-	<option value="//api/name/subscribeToGroupsWithIDs:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ subscribeToGroupsWithIDs:success:failure:</option>
+	<option value="//api/name/updateAlertSegments:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ updateAlertSegments:success:failure:</option>
 	
 	
 	
@@ -85,7 +89,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Required Methods">Required Methods</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Subscription Groups">Subscription Groups</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Alert Segments">Alert Segments</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Other Methods">Other Methods</a></span></li>
 	
@@ -101,6 +105,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/APNSToken">APNSToken</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/alertsEnabled">alertsEnabled</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didFailToRegisterForRemoteNotificationsWithError:">didFailToRegisterForRemoteNotificationsWithError:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didReceiveRemoteNotification:">didReceiveRemoteNotification:</a></span></li>
@@ -109,11 +115,13 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didRegisterForRemoteNotificationsWithDeviceToken:">didRegisterForRemoteNotificationsWithDeviceToken:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/disableAlerts">disableAlerts</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enableAlerts">enableAlerts</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getAlertSegmentsWithSuccess:failure:">getAlertSegmentsWithSuccess:failure:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getExtraInformationForAlert:success:failure:">getExtraInformationForAlert:success:failure:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getExtraInformationForPushID:success:failure:">getExtraInformationForPushID:success:failure:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSubscriptionGroupsWithSuccess:failure:">getSubscriptionGroupsWithSuccess:failure:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isOptIn">isOptIn</a></span></li>
 	
@@ -121,7 +129,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setDevelopmentModeEnabled:">setDevelopmentModeEnabled:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/subscribeToGroupsWithIDs:success:failure:">subscribeToGroupsWithIDs:success:failure:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateAlertSegments:success:failure:">updateAlertSegments:success:failure:</a></span></li>
 	
 </ul></li>
 
@@ -132,7 +140,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="MaaSAlerts Class Reference" name="top"></a>
+				<a title="PWAlerts Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -141,7 +149,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">MaaSAlerts Class Reference</h1>
+						<h1 class="title title-header">PWAlerts Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -152,7 +160,7 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">MaaSAlerts.h</td>
+	<td class="specification-value">PWAlerts.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -162,15 +170,15 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>  <code>MaaSAlerts</code> enables easy implementation of alerts and notifications. It encapsulates advanced push features such as subscriber groups and fetching extra information related to a push notification.</p>
+						<p><code>PWAlerts</code> enables easy implementation of alerts and notifications. It encapsulates advanced push features like subscriber groups and the ability to fetch extra information related to a push notification.</p>
 
-<h2>Subscription Groups</h2>
+<h2>Alert Segments</h2>
 
-<p>MaaSAlerts provides the ability to provide users with a list of subscription groups from which more filtered alerts and notifications can be received. There are two methods that facilitate this: <a href="#//api/name/getSubscriptionGroupsWithSuccess:failure:"><code>getSubscriptionGroupsWithSuccess:failure:</code></a> and <a href="#//api/name/subscribeToGroupsWithIDs:success:failure:"><code>subscribeToGroupsWithIDs:success:failure:</code></a>.</p>
+<p><code>PWAlerts</code> allows you to provide users with a hierarchy of alert segments from which one or more filtered alerts and notifications can be received. There are two methods that facilitate this: <a href="#//api/name/getAlertSegmentsWithSuccess:failure:"><code>getAlertSegmentsWithSuccess:failure:</code></a> and <a href="#//api/name/updateAlertSegments:success:failure:"><code>updateAlertSegments:success:failure:</code></a>.</p>
 
 <h2>Development</h2>
 
-<p>During the development of your application, you may want to utilize Apple&rsquo;s push notification sandbox. To enable development mode for MaaSAlerts you would call <code>[MaaSAlerts setDevelopmentModeEnabled:YES]</code>. If you omit this call, MaaSAlerts will default to Apple&rsquo;s production push notification system.</p>
+<p>During the development of your application, you may want to utilize Apple&rsquo;s push notification sandbox. To enable development mode for PWAlerts, would call <code>[PWAlerts setDevelopmentModeEnabled:YES]</code>. If you omit this call, PWAlerts will default to Apple&rsquo;s production push notification system.</p>
 					</div>
 					
 					
@@ -214,19 +222,19 @@
 						</ul>
 						
 						
-						<a title="Subscription Groups" name="task_Subscription Groups"></a>
-						<h3 class="subsubtitle task-title">Subscription Groups</h3>
+						<a title="Alert Segments" name="task_Alert Segments"></a>
+						<h3 class="subsubtitle task-title">Alert Segments</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/getSubscriptionGroupsWithSuccess:failure:">+&nbsp;getSubscriptionGroupsWithSuccess:failure:</a></code>
+		<code><a href="#//api/name/getAlertSegmentsWithSuccess:failure:">+&nbsp;getAlertSegmentsWithSuccess:failure:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/subscribeToGroupsWithIDs:success:failure:">+&nbsp;subscribeToGroupsWithIDs:success:failure:</a></code>
+		<code><a href="#//api/name/updateAlertSegments:success:failure:">+&nbsp;updateAlertSegments:success:failure:</a></code>
 	</span>
 	
 	
@@ -240,18 +248,6 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/setDevelopmentModeEnabled:">+&nbsp;setDevelopmentModeEnabled:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/getExtraInformationForPushID:success:failure:">+&nbsp;getExtraInformationForPushID:success:failure:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
 		<code><a href="#//api/name/getExtraInformationForAlert:success:failure:">+&nbsp;getExtraInformationForAlert:success:failure:</a></code>
 	</span>
 	
@@ -264,13 +260,37 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/APNSToken">+&nbsp;APNSToken</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setDevelopmentModeEnabled:">+&nbsp;setDevelopmentModeEnabled:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/isOptIn">+&nbsp;isOptIn</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/APNSToken">+&nbsp;APNSToken</a></code>
+		<code><a href="#//api/name/alertsEnabled">+&nbsp;alertsEnabled</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enableAlerts">+&nbsp;enableAlerts</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/disableAlerts">+&nbsp;disableAlerts</a></code>
 	</span>
 	
 	
@@ -296,12 +316,12 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns Apple push token. Call after <a href="#//api/name/didRegisterForRemoteNotificationsWithDeviceToken:"><code>didRegisterForRemoteNotificationsWithDeviceToken:</code></a>. Calling before will return nil.</p>
+		<p>Returns the Apple Push Notification service (APNs) token. Call this after <a href="#//api/name/didRegisterForRemoteNotificationsWithDeviceToken:"><code>didRegisterForRemoteNotificationsWithDeviceToken:</code></a>.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSString *)APNSToken</code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSString *__nullable)APNSToken</code></div>
 
     
 	
@@ -310,6 +330,11 @@
 	
 	
 	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Calling this method prior to registering for remote notifications will return <code>nil</code>.</p>
+	</div>
 	
 	
 	
@@ -319,7 +344,48 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MaaSAlerts.h</code><br />
+		<code class="declared-in-ref">PWAlerts.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/alertsEnabled" title="alertsEnabled"></a>
+	<h3 class="subsubtitle method-title">alertsEnabled</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A Boolean value indicating whether Phunware alerts are enabled on the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)alertsEnabled</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Alerts are enabled by default. Developers can opt-out of Phunware remote notifications by calling <a href="#//api/name/disableAlerts"><code>[PWAlerts disableAlerts]</code></a>. Developers can opt back in to Phunware alerts by calling <a href="#//api/name/enableAlerts"><code>[PWAlerts enableAlerts]</code></a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWAlerts.h</code><br />
 	</div>				
 	
 	
@@ -332,12 +398,12 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Call inside <code>application:didFailToRegisterForRemoteNotificationsWithError:</code></p>
+		<p>Call this inside <code>application:didFailToRegisterForRemoteNotificationsWithError:</code>.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)didFailToRegisterForRemoteNotificationsWithError:(NSError *)<em>error</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)didFailToRegisterForRemoteNotificationsWithError:(NSError *__nonnull)<em>error</em></code></div>
 
     
 	
@@ -346,7 +412,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>error</em></dt>
-			<dd><p>An NSError object that encapsulates information that explains why registration did not succeed. The application can display this information to the user.</p></dd>
+			<dd><p>An NSError object that encapsulates information explaining why registration did not succeed. The application can display this information to the user.</p></dd>
 		</dl>
 		
 	</div>
@@ -365,7 +431,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MaaSAlerts.h</code><br />
+		<code class="declared-in-ref">PWAlerts.h</code><br />
 	</div>				
 	
 	
@@ -383,7 +449,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)didReceiveRemoteNotification:(NSDictionary *)<em>userInfo</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)didReceiveRemoteNotification:(NSDictionary *__nonnull)<em>userInfo</em></code></div>
 
     
 	
@@ -411,7 +477,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MaaSAlerts.h</code><br />
+		<code class="declared-in-ref">PWAlerts.h</code><br />
 	</div>				
 	
 	
@@ -424,12 +490,12 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Called when you want to explicitly trigger a push analytics event. This method should only be called when the user consumes a push notification.</p>
+		<p>Called to explicitly trigger a push analytics event. This method should only be called when the user consumes a push notification.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)didReceiveRemoteNotificationForPushID:(NSString *)<em>pushID</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)didReceiveRemoteNotificationForPushID:(NSString *__nonnull)<em>pushID</em></code></div>
 
     
 	
@@ -457,7 +523,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MaaSAlerts.h</code><br />
+		<code class="declared-in-ref">PWAlerts.h</code><br />
 	</div>				
 	
 	
@@ -470,12 +536,12 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Call inside <code>application:didRegisterForRemoteNotificationsWithDeviceToken:</code></p>
+		<p>Call this inside <code>application:didRegisterForRemoteNotificationsWithDeviceToken:</code>.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)<em>devToken</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)didRegisterForRemoteNotificationsWithDeviceToken:(NSData *__nonnull)<em>devToken</em></code></div>
 
     
 	
@@ -484,7 +550,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>devToken</em></dt>
-			<dd><p>A token that identifies the device to Apple Push Notification Service (APNS). The token is an opaque data type because that is the form that the provider needs to submit to the APNS servers when it sends a notification to a device. For performance reasons, the APNS servers require a binary format.</p></dd>
+			<dd><p>A token that identifies the device to Apple Push Notification service (APNS). The provider needs the token to be an opaque data type in order to submit it to the APNs servers when sending a notification to a device. For performance reasons, the APNs servers require a binary format.</p></dd>
 		</dl>
 		
 	</div>
@@ -503,7 +569,145 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MaaSAlerts.h</code><br />
+		<code class="declared-in-ref">PWAlerts.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/disableAlerts" title="disableAlerts"></a>
+	<h3 class="subsubtitle method-title">disableAlerts</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Opt user out of all Phunware alerts.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)disableAlerts</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>to opt the user in to Phunware alerts again please use <a href="#//api/name/enableAlerts"><code>[PWAlerts enableAlerts]</code></a>. Disabling alerts when they are already disabled is a no-op.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWAlerts.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/enableAlerts" title="enableAlerts"></a>
+	<h3 class="subsubtitle method-title">enableAlerts</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Opt-in user to Phunware alerts.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)enableAlerts</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Alerts are enabled by default. Enabling alerts when they are already enabled is a no-op.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWAlerts.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getAlertSegmentsWithSuccess:failure:" title="getAlertSegmentsWithSuccess:failure:"></a>
+	<h3 class="subsubtitle method-title">getAlertSegmentsWithSuccess:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get list of all alert segments and their current subscription status.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)getAlertSegmentsWithSuccess:(__nullable PWAlertsSegmentSuccess)<em>success</em> failure:(__nullable PWAlertsSegmentFailure)<em>failure</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>A block object to be executed when <code>getAlertSegmentsWithSuccess:failure:</code> succeeds. This block has no return value and takes one argument: the alert segments received from the server (an <code>NSArray</code> object that contains the alert segments as <a href="../Classes/PWAlertSegment.html"><code>PWAlertSegment</code></a> objects).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>A block object to be executed when <code>getAlertSegmentsWithSuccess:failure:</code> fails.This block has no return value and takes one argument: an NSError object describing the error that occurred.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method replaces the deprecated method <code>getSubscriptionGroupsWithSuccess:failure:</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWAlerts.h</code><br />
 	</div>				
 	
 	
@@ -521,7 +725,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)getExtraInformationForAlert:(PWAlert *)<em>alert</em> success:(void ( ^ ) ( NSDictionary *extraInformation ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)getExtraInformationForAlert:(PWAlert *__nonnull)<em>alert</em> success:(void ( ^ __nullable ) ( NSDictionary *__nonnull extraInformation ))<em>success</em> failure:(void ( ^ __nullable ) ( NSError *__nonnull error ))<em>failure</em></code></div>
 
     
 	
@@ -559,114 +763,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MaaSAlerts.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/getExtraInformationForPushID:success:failure:" title="getExtraInformationForPushID:success:failure:"></a>
-	<h3 class="subsubtitle method-title">getExtraInformationForPushID:success:failure:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Get extra push information associated for the specified pushID. This method is deprecated and will be removed in the future. Please use <a href="#//api/name/getExtraInformationForAlert:success:failure:"><code>getExtraInformationForAlert:success:failure:</code></a>.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (void)getExtraInformationForPushID:(NSString *)<em>pushID</em> success:(void ( ^ ) ( NSDictionary *extraInformation ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>pushID</em></dt>
-			<dd><p>The ID of the push notification for which extra information is requested.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>success</em></dt>
-			<dd><p>A block object to be executed when <code>getExtraInformationForPushID:success:failure:</code> succeeds. This block has no return value and takes one argument: the extra information received from the server. The return object will always be an <code>NSDictionary</code>.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>failure</em></dt>
-			<dd><p>A block object to be executed when <code>getExtraInformationForPushID:success:failure:</code> fails. This block has no return value and takes one argument: an <code>NSError</code> object describing the error that occurred.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MaaSAlerts.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/getSubscriptionGroupsWithSuccess:failure:" title="getSubscriptionGroupsWithSuccess:failure:"></a>
-	<h3 class="subsubtitle method-title">getSubscriptionGroupsWithSuccess:failure:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Get subscription groups list. Returns an NSArray of available subscription groups or an NSError object.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (void)getSubscriptionGroupsWithSuccess:(void ( ^ ) ( NSArray *groups ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>success</em></dt>
-			<dd><p>A block object to be executed when <code>getSubscriptionGroupsWithSuccess:success:failure:</code> succeeds. This block has no return value and takes one argument: the groups received from the server (an <code>NSArray</code> object that contains the subscription groups in the following format <code>{@"id" : @"12", @"name" : @"Subscription group name"}</code>).</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>failure</em></dt>
-			<dd><p>A block object to be executed when <code>getSubscriptionGroupsWithSuccess:success:failure:</code> fails. This block has no return value and takes one argument: an NSError object describing the error that occurred.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MaaSAlerts.h</code><br />
+		<code class="declared-in-ref">PWAlerts.h</code><br />
 	</div>				
 	
 	
@@ -702,7 +799,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MaaSAlerts.h</code><br />
+		<code class="declared-in-ref">PWAlerts.h</code><br />
 	</div>				
 	
 	
@@ -720,7 +817,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSString *)serviceName</code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSString *__nonnull)serviceName</code></div>
 
     
 	
@@ -738,7 +835,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MaaSAlerts.h</code><br />
+		<code class="declared-in-ref">PWAlerts.h</code><br />
 	</div>				
 	
 	
@@ -751,7 +848,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Optionally called inside <code>application:didFinishLaunchingWithOptions:</code>. By default, your application will use Apple&rsquo;s production push notification servers. If you would like to use the sandbox push notificiation servers you would call <code>[MaaSAlerts setDevelopmentModeEnabled:YES]</code>. Note that even if development mode is enabled, push notifications will not work in the simulator.</p>
+		<p>Optionally called inside <code>application:didFinishLaunchingWithOptions:</code>. By default, your application will use Apple&rsquo;s production push notification servers. If you would like to use the sandbox push notificiation servers, call <code>[PWAlerts setDevelopmentModeEnabled:YES]</code>. Note that even if development mode is enabled, push notifications will not work in the simulator.</p>
 	</div>		
 	
     
@@ -765,7 +862,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>enabled</em></dt>
-			<dd><p>A boolean variable that indicates whether or not push development mode is enabled.</p></dd>
+			<dd><p>A Boolean variable that indicates whether push development mode is enabled.</p></dd>
 		</dl>
 		
 	</div>
@@ -784,25 +881,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MaaSAlerts.h</code><br />
+		<code class="declared-in-ref">PWAlerts.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/subscribeToGroupsWithIDs:success:failure:" title="subscribeToGroupsWithIDs:success:failure:"></a>
-	<h3 class="subsubtitle method-title">subscribeToGroupsWithIDs:success:failure:</h3>
+	<a name="//api/name/updateAlertSegments:success:failure:" title="updateAlertSegments:success:failure:"></a>
+	<h3 class="subsubtitle method-title">updateAlertSegments:success:failure:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Subscribe to a list of groups.</p>
+		<p>Update the alert segment subscriptions.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)subscribeToGroupsWithIDs:(NSArray *)<em>groupIDs</em> success:(void ( ^ ) ( ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)updateAlertSegments:(NSArray *__nonnull)<em>segments</em> success:(void ( ^ __nullable ) ( ))<em>success</em> failure:(__nullable PWAlertsSegmentFailure)<em>failure</em></code></div>
 
     
 	
@@ -810,18 +907,18 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>groupIDs</em></dt>
-			<dd><p>An array of one or more <code>NSString</code> objects that represent the group IDs being subscribed to.</p></dd>
+			<dt><em>segments</em></dt>
+			<dd><p>An array of one or more <a href="../Classes/PWAlertSegment.html"><code>PWAlertSegment</code></a> objects that represent the alert subscriptions.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>success</em></dt>
-			<dd><p>A block object to be executed when <code>subscribeToGroupsWithIDs:success:failure:</code> succeeds. This block has no return value and takes no arguments.</p></dd>
+			<dd><p>A block object to be executed when <code>updateAlertSegments:success:failure</code> succeeds. This block has no return value and takes no arguments.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>failure</em></dt>
-			<dd><p>A block object to be executed when <code>subscribeToGroupsWithIDs:success:failure:</code> fails. This block has no return value and takes one argument: an <code>NSError</code> object describing the error that occurred.</p></dd>
+			<dd><p>A block object to be executed when <code>updateAlertSegments:success:failure:</code> fails. This block has no return value and takes one argument: an <code>NSError</code> object describing the error that occurred.</p></dd>
 		</dl>
 		
 	</div>
@@ -832,6 +929,11 @@
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method replaces the deprecated method <code>subscribeToGroupsWithIDs:success:failure:</code>. It&rsquo;s very important that you always pass back all known <a href="../Classes/PWAlertSegment.html">PWAlertSegment</a> objects as this method will subscribe to all <code>PWAlertSegments</code> objects marked for subscription and unsubscribe from all other segments.</p>
+	</div>
+	
 	
 	
 	
@@ -840,7 +942,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MaaSAlerts.h</code><br />
+		<code class="declared-in-ref">PWAlerts.h</code><br />
 	</div>				
 	
 	
@@ -863,7 +965,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Phunware, Inc.. All rights reserved. (Last updated: 2013-12-27)</span><br />
+						<p><span class="copyright">&copy; 2015 Phunware, Inc.. All rights reserved. (Last updated: 2015-09-28)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						

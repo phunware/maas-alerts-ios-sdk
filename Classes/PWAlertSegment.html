@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>PWAlert Class Reference</title>
+		<title>PWAlertSegment Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -11,12 +11,12 @@
 	<body>
 		<header id="top_header">
 			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">MaaSAlerts </a></h1>
+				<h1><a id="libraryTitle" href="../index.html">PWAlerts </a></h1>
 				<a id="developerHome" href="../index.html">Phunware, Inc.</a>
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">PWAlert Class Reference</h1>
+				<h1 class="hideInXcode">PWAlertSegment Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -39,20 +39,17 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/alertID">&nbsp;&nbsp;&nbsp;&nbsp;alertID</option>
+	<option value="//api/name/identifier">&nbsp;&nbsp;&nbsp;&nbsp;identifier</option>
 	
-	<option value="//api/name/message">&nbsp;&nbsp;&nbsp;&nbsp;message</option>
+	<option value="//api/name/name">&nbsp;&nbsp;&nbsp;&nbsp;name</option>
 	
-	<option value="//api/name/payload">&nbsp;&nbsp;&nbsp;&nbsp;payload</option>
+	<option value="//api/name/segments">&nbsp;&nbsp;&nbsp;&nbsp;segments</option>
 	
-	
-	
-	
+	<option value="//api/name/subscribed">&nbsp;&nbsp;&nbsp;&nbsp;subscribed</option>
 	
 	
-	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/initWithNotificationUserInfo:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithNotificationUserInfo:</option>
+	
 	
 	
 	
@@ -78,30 +75,26 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/alertID">alertID</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/identifier">identifier</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/message">message</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/name">name</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/payload">payload</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/segments">segments</a></span></li>
 	
-</ul></li>
-
-
-
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithNotificationUserInfo:">initWithNotificationUserInfo:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/subscribed">subscribed</a></span></li>
 	
 </ul></li>
+
+
+
+
 
 
 			</ul>
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="PWAlert Class Reference" name="top"></a>
+				<a title="PWAlertSegment Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -110,7 +103,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">PWAlert Class Reference</h1>
+						<h1 class="title title-header">PWAlertSegment Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -121,10 +114,10 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Conforms to</td>
-	<td class="specification-value">NSCoding<br />NSCopying</td>
+	<td class="specification-value">NSCoding</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">PWAlert.h</td>
+	<td class="specification-value">PWAlertSegment.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -134,7 +127,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p><code>PWAlert</code> object encapsulates all information related to an alert. This includes but is not limited to the <a href="#//api/name/message">message</a>, the alert ID, and the <a href="#//api/name/payload">payload</a> dictionary.</p>
+						<p><code>PWAlertSegment</code> encapsulates all of the information related to an alert segment. This includes the <a href="#//api/name/name">name</a>, <a href="#//api/name/identifier">identifier</a>, child <a href="#//api/name/segments">segments</a> and subscription flag.</p>
 					</div>
 					
 					
@@ -152,27 +145,27 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/message">&nbsp;&nbsp;message</a></code>
+		<code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/alertID">&nbsp;&nbsp;alertID</a></code>
+		<code><a href="#//api/name/identifier">&nbsp;&nbsp;identifier</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/payload">&nbsp;&nbsp;payload</a></code>
+		<code><a href="#//api/name/subscribed">&nbsp;&nbsp;subscribed</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithNotificationUserInfo:">&ndash;&nbsp;initWithNotificationUserInfo:</a></code>
+		<code><a href="#//api/name/segments">&nbsp;&nbsp;segments</a></code>
 	</span>
-	
+	<span class="task-item-suffix">property</span>
 	
 </li>
 						</ul>
@@ -188,18 +181,18 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/alertID" title="alertID"></a>
-	<h3 class="subsubtitle method-title">alertID</h3>
+	<a name="//api/name/identifier" title="identifier"></a>
+	<h3 class="subsubtitle method-title">identifier</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An <code>NSInteger</code> value that identifies the Alert ID.</p>
+		<p>An <code>NSString</code> value that represents the unique identifier of an alert segment.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *alertID</code></div>
+	<div class="method-subsection method-declaration"><code>@property (strong, readonly) NSString *identifier</code></div>
 
     
 	
@@ -217,25 +210,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWAlert.h</code><br />
+		<code class="declared-in-ref">PWAlertSegment.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/message" title="message"></a>
-	<h3 class="subsubtitle method-title">message</h3>
+	<a name="//api/name/name" title="name"></a>
+	<h3 class="subsubtitle method-title">name</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An <code>NSString</code> value that identifies the alert message.</p>
+		<p>An <code>NSString</code> value that represents the readable name of an alert segment.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *message</code></div>
+	<div class="method-subsection method-declaration"><code>@property (strong, readonly) NSString *name</code></div>
 
     
 	
@@ -253,25 +246,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWAlert.h</code><br />
+		<code class="declared-in-ref">PWAlertSegment.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/payload" title="payload"></a>
-	<h3 class="subsubtitle method-title">payload</h3>
+	<a name="//api/name/segments" title="segments"></a>
+	<h3 class="subsubtitle method-title">segments</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An <code>NSString</code> value that identifies the <code>NSDictionary</code> payload that was used to initialize the <code>PWAlert</code> object. You can use this payload to fetch custom arguments.</p>
+		<p>An <code>NSArray</code> value that represents the child alert segment objects nested under the given alert segment.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSDictionary *payload</code></div>
+	<div class="method-subsection method-declaration"><code>@property (strong, readonly) NSArray *segments</code></div>
 
     
 	
@@ -289,7 +282,43 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWAlert.h</code><br />
+		<code class="declared-in-ref">PWAlertSegment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/subscribed" title="subscribed"></a>
+	<h3 class="subsubtitle method-title">subscribed</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A <code>BOOL</code> value that represents the current or desired subscription state of the alert segment.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (getter=isSubscribed) BOOL subscribed</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PWAlertSegment.h</code><br />
 	</div>				
 	
 	
@@ -300,64 +329,6 @@
 					
 					
 					
-					
-					<div class="section section-methods">
-						<a title="Instance Methods" name="instance_methods"></a>
-						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/initWithNotificationUserInfo:" title="initWithNotificationUserInfo:"></a>
-	<h3 class="subsubtitle method-title">initWithNotificationUserInfo:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Initializes a <code>PWAlert</code> object. You can only initialize a <code>PWAlert</code> object with a valid userInfo dictionary.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (instancetype)initWithNotificationUserInfo:(NSDictionary *)<em>userInfo</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>userInfo</em></dt>
-			<dd><p>The userInfo which encapsulates the notification. This is fetched from the following locations:</p>
-
-<ul>
-<li><code>application:didReceiveRemoteNotification:</code> passed a userInfo <code>NSDictionary</code>. You can use this dictionary to instantiate a <code>PWAlert</code> object.</li>
-<li><code>application:didFinishLaunchingWithOptions:</code> may have a <code>UIApplicationLaunchOptionsRemoteNotificationKey</code> if the application was launched through a push notification. You can extract the userInfo from the launchOptions <code>NSDictionary</code> using the aformentioned key.</li>
-</ul>
-</dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PWAlert.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
 					
 					
                     
@@ -372,7 +343,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Phunware, Inc.. All rights reserved. (Last updated: 2013-12-27)</span><br />
+						<p><span class="copyright">&copy; 2015 Phunware, Inc.. All rights reserved. (Last updated: 2015-09-28)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						
