@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PWAlertsLogger.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PWAlertsLogger</TokenIdentifier>
+			<Abstract type="html">Handles the state of the loggers</Abstract>
+			<DeclaredIn>PWAlertsLogger.h</DeclaredIn>
+            
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWAlertsLogger/addLoggersIfNeeded</TokenIdentifier>
+			<Abstract type="html">Add the loggers if the current configuration is development</Abstract>
+			<DeclaredIn>PWAlertsLogger.h</DeclaredIn>
+			
+			<Declaration>+ (void)addLoggersIfNeeded</Declaration>
+			
+			
+			<Anchor>//api/name/addLoggersIfNeeded</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

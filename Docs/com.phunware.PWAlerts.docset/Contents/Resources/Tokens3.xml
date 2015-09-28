@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PWAlerts.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PWAlerts</TokenIdentifier>
+			<Abstract type="html">PWAlerts enables easy implementation of alerts and notifications. It encapsulates advanced push features like subscriber groups and the ability to fetch extra information related to a push notification.</Abstract>
+			<DeclaredIn>PWAlerts.h</DeclaredIn>
+            
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWAlerts/didRegisterForRemoteNotificationsWithDeviceToken:</TokenIdentifier>
+			<Abstract type="html">Call this inside application:didRegisterForRemoteNotificationsWithDeviceToken:.</Abstract>
+			<DeclaredIn>PWAlerts.h</DeclaredIn>
+			
+			<Declaration>+ (void)didRegisterForRemoteNotificationsWithDeviceToken:(NSData *__nonnull)devToken</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>devToken</Name>
+					<Abstract type="html">A token that identifies the device to Apple Push Notification service (APNS). The provider needs the token to be an opaque data type in order to submit it to the APNs servers when sending a notification to a device. For performance reasons, the APNs servers require a binary format.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/didRegisterForRemoteNotificationsWithDeviceToken:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWAlerts/didFailToRegisterForRemoteNotificationsWithError:</TokenIdentifier>
+			<Abstract type="html">Call this inside application:didFailToRegisterForRemoteNotificationsWithError:.</Abstract>
+			<DeclaredIn>PWAlerts.h</DeclaredIn>
+			
+			<Declaration>+ (void)didFailToRegisterForRemoteNotificationsWithError:(NSError *__nonnull)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>error</Name>
+					<Abstract type="html">An NSError object that encapsulates information explaining why registration did not succeed. The application can display this information to the user.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/didFailToRegisterForRemoteNotificationsWithError:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWAlerts/didReceiveRemoteNotification:</TokenIdentifier>
+			<Abstract type="html">Called inside application:didReceiveRemoteNotification:. This method assumes all notifications received were opened by the user and triggers a push analytics payload.</Abstract>
+			<DeclaredIn>PWAlerts.h</DeclaredIn>
+			
+			<Declaration>+ (void)didReceiveRemoteNotification:(NSDictionary *__nonnull)userInfo</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>userInfo</Name>
+					<Abstract type="html">A dictionary that contains information related to the remote notification (specifically, a badge number for the application icon, a notification identifier and possibly custom data). The provider originates it as a JSON-defined dictionary that AppKit converts to an NSDictionary object. The dictionary may contain only property-list objects plus NSNull.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/didReceiveRemoteNotification:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWAlerts/didReceiveRemoteNotificationForPushID:</TokenIdentifier>
+			<Abstract type="html">Called to explicitly trigger a push analytics event. This method should only be called when the user consumes a push notification.</Abstract>
+			<DeclaredIn>PWAlerts.h</DeclaredIn>
+			
+			<Declaration>+ (void)didReceiveRemoteNotificationForPushID:(NSString *__nonnull)pushID</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>pushID</Name>
+					<Abstract type="html">The remote notification pushID. The pushID can be found in the application:didReceiveRemoteNotification: userInfo, `[userInfo objectForKey:@&quot;pid&quot;].</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/didReceiveRemoteNotificationForPushID:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWAlerts/getAlertSegmentsWithSuccess:failure:</TokenIdentifier>
+			<Abstract type="html">Get list of all alert segments and their current subscription status.</Abstract>
+			<DeclaredIn>PWAlerts.h</DeclaredIn>
+			
+			<Declaration>+ (void)getAlertSegmentsWithSuccess:(__nullable PWAlertsSegmentSuccess)success failure:(__nullable PWAlertsSegmentFailure)failure</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>success</Name>
+					<Abstract type="html">A block object to be executed when getAlertSegmentsWithSuccess:failure: succeeds. This block has no return value and takes one argument: the alert segments received from the server (an NSArray object that contains the alert segments as PWAlertSegment objects).</Abstract>
+				</Parameter><Parameter>
+					<Name>failure</Name>
+					<Abstract type="html">A block object to be executed when getAlertSegmentsWithSuccess:failure: fails.This block has no return value and takes one argument: an NSError object describing the error that occurred.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getAlertSegmentsWithSuccess:failure:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWAlerts/updateAlertSegments:success:failure:</TokenIdentifier>
+			<Abstract type="html">Update the alert segment subscriptions.</Abstract>
+			<DeclaredIn>PWAlerts.h</DeclaredIn>
+			
+			<Declaration>+ (void)updateAlertSegments:(NSArray *__nonnull)segments success:(void ( ^ __nullable ) ( ))success failure:(__nullable PWAlertsSegmentFailure)failure</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>segments</Name>
+					<Abstract type="html">An array of one or more PWAlertSegment objects that represent the alert subscriptions.</Abstract>
+				</Parameter><Parameter>
+					<Name>success</Name>
+					<Abstract type="html">A block object to be executed when updateAlertSegments:success:failure succeeds. This block has no return value and takes no arguments.</Abstract>
+				</Parameter><Parameter>
+					<Name>failure</Name>
+					<Abstract type="html">A block object to be executed when updateAlertSegments:success:failure: fails. This block has no return value and takes one argument: an NSError object describing the error that occurred.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateAlertSegments:success:failure:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWAlerts/getExtraInformationForAlert:success:failure:</TokenIdentifier>
+			<Abstract type="html">Get extra push information associated for the specified alert.</Abstract>
+			<DeclaredIn>PWAlerts.h</DeclaredIn>
+			
+			<Declaration>+ (void)getExtraInformationForAlert:(PWAlert *__nonnull)alert success:(void ( ^ __nullable ) ( NSDictionary *__nonnull extraInformation ))success failure:(void ( ^ __nullable ) ( NSError *__nonnull error ))failure</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>alert</Name>
+					<Abstract type="html">The alert for which extra information is requested.</Abstract>
+				</Parameter><Parameter>
+					<Name>success</Name>
+					<Abstract type="html">A block object to be executed when getExtraInformationForAlert:success:failure: succeeds. This block has no return value and takes one argument: the extra information received from the server. The return object will always be an NSDictionary.</Abstract>
+				</Parameter><Parameter>
+					<Name>failure</Name>
+					<Abstract type="html">A block object to be executed when getExtraInformationForAlert:success:failure: fails. This block has no return value and takes one argument: an NSError object describing the error that occurred.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getExtraInformationForAlert:success:failure:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWAlerts/serviceName</TokenIdentifier>
+			<Abstract type="html">Returns &apos;MaaSAlerts&apos;.</Abstract>
+			<DeclaredIn>PWAlerts.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *__nonnull)serviceName</Declaration>
+			
+			
+			<Anchor>//api/name/serviceName</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWAlerts/APNSToken</TokenIdentifier>
+			<Abstract type="html">Returns the Apple Push Notification service (APNs) token. Call this after didRegisterForRemoteNotificationsWithDeviceToken:.</Abstract>
+			<DeclaredIn>PWAlerts.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *__nullable)APNSToken</Declaration>
+			
+			
+			<Anchor>//api/name/APNSToken</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWAlerts/setDevelopmentModeEnabled:</TokenIdentifier>
+			<Abstract type="html">Optionally called inside application:didFinishLaunchingWithOptions:. By default, your application will use Apple&apos;s production push notification servers. If you would like to use the sandbox push notificiation servers, call [PWAlerts setDevelopmentModeEnabled:YES]. Note that even if development mode is enabled, push notifications will not work in the simulator.</Abstract>
+			<DeclaredIn>PWAlerts.h</DeclaredIn>
+			
+			<Declaration>+ (void)setDevelopmentModeEnabled:(BOOL)enabled</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>enabled</Name>
+					<Abstract type="html">A Boolean variable that indicates whether push development mode is enabled.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setDevelopmentModeEnabled:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWAlerts/isOptIn</TokenIdentifier>
+			<Abstract type="html">Checks push opt-in status.</Abstract>
+			<DeclaredIn>PWAlerts.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)isOptIn</Declaration>
+			
+			
+			<Anchor>//api/name/isOptIn</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWAlerts/alertsEnabled</TokenIdentifier>
+			<Abstract type="html">A Boolean value indicating whether Phunware alerts are enabled on the device.</Abstract>
+			<DeclaredIn>PWAlerts.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)alertsEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/alertsEnabled</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWAlerts/enableAlerts</TokenIdentifier>
+			<Abstract type="html">Opt-in user to Phunware alerts.</Abstract>
+			<DeclaredIn>PWAlerts.h</DeclaredIn>
+			
+			<Declaration>+ (void)enableAlerts</Declaration>
+			
+			
+			<Anchor>//api/name/enableAlerts</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PWAlerts/disableAlerts</TokenIdentifier>
+			<Abstract type="html">Opt user out of all Phunware alerts.</Abstract>
+			<DeclaredIn>PWAlerts.h</DeclaredIn>
+			
+			<Declaration>+ (void)disableAlerts</Declaration>
+			
+			
+			<Anchor>//api/name/disableAlerts</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

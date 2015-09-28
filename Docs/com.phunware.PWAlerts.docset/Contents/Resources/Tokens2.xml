@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PWAlertSegment.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PWAlertSegment</TokenIdentifier>
+			<Abstract type="html">PWAlertSegment encapsulates all of the information related to an alert segment. This includes the name, identifier, child segments and subscription flag.</Abstract>
+			<DeclaredIn>PWAlertSegment.h</DeclaredIn>
+            
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWAlertSegment/setName:</TokenIdentifier>
+			<Abstract type="html">An NSString value that represents the readable name of an alert segment.</Abstract>
+			<DeclaredIn>PWAlertSegment.h</DeclaredIn>
+			
+			<Declaration>@property (strong, readonly) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWAlertSegment/name</TokenIdentifier>
+			<Abstract type="html">An NSString value that represents the readable name of an alert segment.</Abstract>
+			<DeclaredIn>PWAlertSegment.h</DeclaredIn>
+			
+			<Declaration>@property (strong, readonly) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWAlertSegment/name</TokenIdentifier>
+			<Abstract type="html">An NSString value that represents the readable name of an alert segment.</Abstract>
+			<DeclaredIn>PWAlertSegment.h</DeclaredIn>
+			
+			<Declaration>@property (strong, readonly) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWAlertSegment/setIdentifier:</TokenIdentifier>
+			<Abstract type="html">An NSString value that represents the unique identifier of an alert segment.</Abstract>
+			<DeclaredIn>PWAlertSegment.h</DeclaredIn>
+			
+			<Declaration>@property (strong, readonly) NSString *identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWAlertSegment/identifier</TokenIdentifier>
+			<Abstract type="html">An NSString value that represents the unique identifier of an alert segment.</Abstract>
+			<DeclaredIn>PWAlertSegment.h</DeclaredIn>
+			
+			<Declaration>@property (strong, readonly) NSString *identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWAlertSegment/identifier</TokenIdentifier>
+			<Abstract type="html">An NSString value that represents the unique identifier of an alert segment.</Abstract>
+			<DeclaredIn>PWAlertSegment.h</DeclaredIn>
+			
+			<Declaration>@property (strong, readonly) NSString *identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWAlertSegment/setSubscribed:</TokenIdentifier>
+			<Abstract type="html">A BOOL value that represents the current or desired subscription state of the alert segment.</Abstract>
+			<DeclaredIn>PWAlertSegment.h</DeclaredIn>
+			
+			<Declaration>@property (getter=isSubscribed) BOOL subscribed</Declaration>
+			
+			
+			<Anchor>//api/name/subscribed</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWAlertSegment/isSubscribed</TokenIdentifier>
+			<Abstract type="html">A BOOL value that represents the current or desired subscription state of the alert segment.</Abstract>
+			<DeclaredIn>PWAlertSegment.h</DeclaredIn>
+			
+			<Declaration>@property (getter=isSubscribed) BOOL subscribed</Declaration>
+			
+			
+			<Anchor>//api/name/subscribed</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWAlertSegment/subscribed</TokenIdentifier>
+			<Abstract type="html">A BOOL value that represents the current or desired subscription state of the alert segment.</Abstract>
+			<DeclaredIn>PWAlertSegment.h</DeclaredIn>
+			
+			<Declaration>@property (getter=isSubscribed) BOOL subscribed</Declaration>
+			
+			
+			<Anchor>//api/name/subscribed</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWAlertSegment/setSegments:</TokenIdentifier>
+			<Abstract type="html">An NSArray value that represents the child alert segment objects nested under the given alert segment.</Abstract>
+			<DeclaredIn>PWAlertSegment.h</DeclaredIn>
+			
+			<Declaration>@property (strong, readonly) NSArray *segments</Declaration>
+			
+			
+			<Anchor>//api/name/segments</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PWAlertSegment/segments</TokenIdentifier>
+			<Abstract type="html">An NSArray value that represents the child alert segment objects nested under the given alert segment.</Abstract>
+			<DeclaredIn>PWAlertSegment.h</DeclaredIn>
+			
+			<Declaration>@property (strong, readonly) NSArray *segments</Declaration>
+			
+			
+			<Anchor>//api/name/segments</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PWAlertSegment/segments</TokenIdentifier>
+			<Abstract type="html">An NSArray value that represents the child alert segment objects nested under the given alert segment.</Abstract>
+			<DeclaredIn>PWAlertSegment.h</DeclaredIn>
+			
+			<Declaration>@property (strong, readonly) NSArray *segments</Declaration>
+			
+			
+			<Anchor>//api/name/segments</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>
